@@ -1,4 +1,6 @@
 Milicia::Application.routes.draw do
+  resources :cursos
+
   resources :region_militar
 
   # The priority is based upon order of creation: first created -> highest priority.
