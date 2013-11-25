@@ -13,8 +13,9 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   	inflect.irregular 'distrito', 'distritos'
   	inflect.irregular 'provincia', 'provincias'
   	inflect.irregular 'departamento', 'departamentos'
+  	inflect.irregular 'infraccion', 'infracciones'
   	inflect.irregular 'curso', 'cursos'
-    inflect.uncountable %w( region_militar )
+    inflect.uncountable %w( region_militar gran_unidad)
 end
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|

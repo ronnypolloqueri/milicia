@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125194201) do
+ActiveRecord::Schema.define(version: 20131125194748) do
 
   create_table "cursos", force: true do |t|
     t.string   "nombre"
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 20131125194201) do
   end
 
   add_index "distritos", ["provincia_id"], name: "index_distritos_on_provincia_id"
+
+  create_table "infracciones", force: true do |t|
+    t.text     "denominacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "provincias", force: true do |t|
     t.string   "nombre"
