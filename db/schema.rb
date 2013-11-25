@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125172906) do
+ActiveRecord::Schema.define(version: 20131125184230) do
+
+  create_table "departamentos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "distritos", force: true do |t|
+    t.string   "nombre"
+    t.integer  "provincia_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "distritos", ["provincia_id"], name: "index_distritos_on_provincia_id"
+
+  create_table "provincias", force: true do |t|
+    t.string   "nombre"
+    t.integer  "departamento_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "provincias", ["departamento_id"], name: "index_provincias_on_departamento_id"
 
   create_table "region_militar", force: true do |t|
     t.string   "nombre"
