@@ -13,9 +13,9 @@ DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
 # ==================  	REGISTRO DE REGION MILITAR =========================
-RegionMilitar.create(nombre:'Región Militar del centro (RMC)', descripcion:'Cuartel General en Piura. Su ámbito jurisdiccional abarca los departamentos de Amazonas, Cajamarca, Lambayeque, La Libertad, Piura y Tumbes. Está conformada por la 9ª Brigada Blindada (Tumbes), 1ª Brigada de Caballería (Sullana, Piura), 1ª Brigada de Infantería (Tumbes), 7ª Brigada de Infantería (Lambayeque), 32ª Brigada de Infantería (Trujillo) y 6ª Brigada de Selva (Bagua). Adicionalmente, encuadra a la 1ª Brigada de Artillería Coronel Jose Joaquín Inclan, operacional desde febrero de 2010, con el Grupo de Comando y Observación Nº 111 y a los Grupos de Artillería de Campaña Nº 1 Dos de Mayo, Nº 111 Mariscal La Mar, Nº 121 Sargento Mayor Fermín Nacarino y Nº 502 Capitán Adolfo King.',himno:'')
-RegionMilitar.create(nombre:'Región Militar del norte (RMN)', descripcion:'Cuartel General en Fuerte General de División EP Rafael Hoyos Rubio en el distrito del Rimac (Lima). Comprende a los departamentos de Ancash, Lima, Huanuco, Ica, Junín, Huanuco, Pasco, San Martín y Ucayali. Agrupa a la 18ª Brigada Blindada (Lima), 1ª Brigada de Fuerzas Especiales (Lima), 3ª Brigada de Fuerzas Especiales (Tarapoto) y 1ª Brigada de Aviación del Ejército (Lima). Su estructura incluye 2 unidades históricas: La Legión Peruana de La Guardia, acantonada en la Fortaleza del Real Felipe (Callao) y al Regimiento de Caballería Nº 1 Glorioso Húsares de Junín (Cuartel Barbones). En febrero de 2012 fue reactivado el Regimiento de Caballería Mariscal Domingo Nieto, asignándosele la custodia y escolta del Presidente de la República.',himno:'')
-"RegionMilitar.create(nombre:'Región Militar del sur (RMS)', descripcion:'Cuartel General en Arequipa. Conocida como la Región de Hierro, comprende los departamentos de Apurimac, Arequipa, Cuzco, Madre de  Dios, Moquegua, Puno y Tacna. Sus  unidades tácticas son la 3ª Brigada Blindada  (Moquegua), 3ª Brigada de Caballeria (Tacna), 4ª Brigada de Montaña (Puno) y 5ª Brigada de Montaña (Cuzco). A estas unidades se suma la 3ª Brigada de Artillería Coronel Francisco Bolognesi, creada oficialmente en noviembre de 2009, conformada por el Grupo de Comando y Observación Nº 113 y los Grupos de Artillería de Campaña Nº 113 Mariscal Eloy G. Ureta, Nº 122 Capitán Hernando De Lavalle, Nº 123 Cabo Alfredo Maldonado y Nº 501 General Roque Saenz Peña; el Agrupamiento de Artilleria Antiaérea Coronel Jose Galvez, con la Batería de Comando y Comunicaciones Nº 4 y los Grupos de Cohetes Antiaéreos Nº 1, Nº 2, Nº 3 y Nº 4. Cuenta con la 113ª Brigada de Servicios (Arequipa).',himno:'Soy soldado entrenado en la paz
+RegionMilitar.create(nombre:'Región Militar del centro (RMC)', descripcion:'Cuartel General en Piura. Su ámbito jurisdiccional abarca los departamentos de Amazonas, Cajamarca, Lambayeque, La Libertad, Piura y Tumbes. Está conformada por la 9ª Brigada Blindada (Tumbes), 1ª Brigada de Caballería (Sullana, Piura), 1ª Brigada de Infantería (Tumbes), 7ª Brigada de Infantería (Lambayeque), 32ª Brigada de Infantería (Trujillo) y 6ª Brigada de Selva (Bagua). Adicionalmente, encuadra a la 1ª Brigada de Artillería Coronel Jose Joaquín Inclan, operacional desde febrero de 2010, con el Grupo de Comando y Observación Nº 111 y a los Grupos de Artillería de Campaña Nº 1 Dos de Mayo, Nº 111 Mariscal La Mar, Nº 121 Sargento Mayor Fermín Nacarino y Nº 502 Capitán Adolfo King.', himno:'')
+RegionMilitar.create(nombre:'Región Militar del norte (RMN)', descripcion:'Cuartel General en Fuerte General de División EP Rafael Hoyos Rubio en el distrito del Rimac (Lima). Comprende a los departamentos de Ancash, Lima, Huanuco, Ica, Junín, Huanuco, Pasco, San Martín y Ucayali. Agrupa a la 18ª Brigada Blindada (Lima), 1ª Brigada de Fuerzas Especiales (Lima), 3ª Brigada de Fuerzas Especiales (Tarapoto) y 1ª Brigada de Aviación del Ejército (Lima). Su estructura incluye 2 unidades históricas: La Legión Peruana de La Guardia, acantonada en la Fortaleza del Real Felipe (Callao) y al Regimiento de Caballería Nº 1 Glorioso Húsares de Junín (Cuartel Barbones). En febrero de 2012 fue reactivado el Regimiento de Caballería Mariscal Domingo Nieto, asignándosele la custodia y escolta del Presidente de la República.', himno:'')
+RegionMilitar.create(nombre:'Región Militar del sur (RMS)', descripcion:'Cuartel General en Arequipa. Conocida como la Región de Hierro, comprende los departamentos de Apurimac, Arequipa, Cuzco, Madre de  Dios, Moquegua, Puno y Tacna. Sus  unidades tácticas son la 3ª Brigada Blindada  (Moquegua), 3ª Brigada de Caballeria (Tacna), 4ª Brigada de Montaña (Puno) y 5ª Brigada de Montaña (Cuzco). A estas unidades se suma la 3ª Brigada de Artillería Coronel Francisco Bolognesi, creada oficialmente en noviembre de 2009, conformada por el Grupo de Comando y Observación Nº 113 y los Grupos de Artillería de Campaña Nº 113 Mariscal Eloy G. Ureta, Nº 122 Capitán Hernando De Lavalle, Nº 123 Cabo Alfredo Maldonado y Nº 501 General Roque Saenz Peña; el Agrupamiento de Artilleria Antiaérea Coronel Jose Galvez, con la Batería de Comando y Comunicaciones Nº 4 y los Grupos de Cohetes Antiaéreos Nº 1, Nº 2, Nº 3 y Nº 4. Cuenta con la 113ª Brigada de Servicios (Arequipa).', himno:'Soy soldado entrenado en la paz
 Venceré por mi patria en la guerra,
 Lucharé con arrojo tenaz
 Y valor sin igual por mi tierra
@@ -31,9 +31,9 @@ Guardare con mi sangre y honor
 Venceré la fatiga y el miedo
 Mi moral es crisol y virtud
 Que me impulsa con todo su anhelo
-A triunfar por mi amado PERÚ')"
-RegionMilitar.create(nombre:'Región Militar del oriente (RMO)', descripcion:'Cuartel General en Fuerte Soldado Alfredo Vargas (Iquitos). Su ámbito de operación comprende al departamento de Loreto y encuadra a un número no revelado de batallones de Infantería de Selva (BIS).',himno:'')
-RegionMilitar.create(nombre:'Región Militar del VRAE', descripcion:'Cuartel General en Base Contraterreorista de Pichari (Pichari-Cuzco), creada en enero de 2009 a fin de combatir y neutralizar a los remanentes de Sendero Luminoso. Su ámbito comprende los Departamentos de Ayacucho, Cerro de Pasco, Junín –a excepción de las localidades de Alegre, Colonia, Misión Ivotsoteni, Montes, Nuñez, Pedro Lopez, Poveni, Rateri y Shiriatari (Satipo) y el distrito de San Ramón (Chanchamayo)– y  Huancavelica; así como los distritos de Pichari y Kimbiri, que pertenecen a la provincia de La Convención (Cusco). A este extenso territorio se suma, desde mediados de 2012, el Valle del rio Mantaro. Está conformada por la 2ª y 31ª Brigadas de Infantería, así como la 22ª Brigada de Ingeniería.  ',himno:'')
+A triunfar por mi amado PERÚ')
+RegionMilitar.create(nombre:'Región Militar del oriente (RMO)', descripcion:'Cuartel General en Fuerte Soldado Alfredo Vargas (Iquitos). Su ámbito de operación comprende al departamento de Loreto y encuadra a un número no revelado de batallones de Infantería de Selva (BIS).', himno:'')
+RegionMilitar.create(nombre:'Región Militar del VRAE', descripcion:'Cuartel General en Base Contraterreorista de Pichari (Pichari-Cuzco), creada en enero de 2009 a fin de combatir y neutralizar a los remanentes de Sendero Luminoso. Su ámbito comprende los Departamentos de Ayacucho, Cerro de Pasco, Junín –a excepción de las localidades de Alegre, Colonia, Misión Ivotsoteni, Montes, Nuñez, Pedro Lopez, Poveni, Rateri y Shiriatari (Satipo) y el distrito de San Ramón (Chanchamayo)– y  Huancavelica; así como los distritos de Pichari y Kimbiri, que pertenecen a la provincia de La Convención (Cusco). A este extenso territorio se suma, desde mediados de 2012, el Valle del rio Mantaro. Está conformada por la 2ª y 31ª Brigadas de Infantería, así como la 22ª Brigada de Ingeniería.  ', himno:'')
 
 # ==================  	REGISTRO DE DEPARTAMENTOS =========================
 
@@ -346,3 +346,644 @@ Infraccion.create(denominacion:'Usar un vehículo oficial para fines ajenos al s
 Infraccion.create(denominacion:'Excederse en el consumo de bebidas alcohólicas en reuniones oficiales')
 Infraccion.create(denominacion:'Ingerir bebidas alcohólicas a bordo de Unidades/Dependencias')
 Infraccion.create(denominacion:'Permitir que personal subordiando ingiera bebidas alcohólicas en Unidades/Dependencias')
+
+# ==================  	REGISTRO DE GRAN UNIDAD =========================
+
+GranUnidad.create(nombre:'CUARTEL GENERAL REGION MILITAR DEL CENTRO ', region_militar_id:1)
+GranUnidad.create(nombre:'1ª BRIGADA DE FUERZAS ESPECIALES', region_militar_id:1)
+GranUnidad.create(nombre:'1ª BRIGADA DE AVIACION DEL  EJERCITO', region_militar_id:1)
+GranUnidad.create(nombre:'3ª BRIGADA DE FUERZAS ESPECIALES', region_militar_id:1)
+GranUnidad.create(nombre:'18ª BRIGADA BLINDADA ', region_militar_id:1)
+GranUnidad.create(nombre:'COMANDO DE RESERVA Y MOVILIZACION – CENTRO ', region_militar_id:1)
+GranUnidad.create(nombre:'21ª BRIGADA DE INFANTERIA DE RESERVAS – CENTRO', region_militar_id:1)
+GranUnidad.create(nombre:'CUARTEL GENERAL REGION MILITAR DEL NORTE', region_militar_id:2)
+GranUnidad.create(nombre:'1ª BRIGADA DE ARTILLERIA', region_militar_id:2)
+GranUnidad.create(nombre:'1ª BRIGADA DE SERVICIOS Nº 111', region_militar_id:2)
+GranUnidad.create(nombre:'1ª BRIGADA DE INFANTERIA', region_militar_id:2)
+GranUnidad.create(nombre:'1ª BRIGADA DE CABALLERIA', region_militar_id:2)
+GranUnidad.create(nombre:'7ª BRIGADA DE INFANTERIA', region_militar_id:2)
+GranUnidad.create(nombre:'32ª BRIGADA DE INFANTERIA', region_militar_id:2)
+GranUnidad.create(nombre:'6ª BRIGADA DE SELVA', region_militar_id:2)
+GranUnidad.create(nombre:'9ª BRIGADA BLINDADA', region_militar_id:2)
+GranUnidad.create(nombre:'COMANDO DE RESERVA Y MOVILIZACION – NORTE', region_militar_id:2)
+GranUnidad.create(nombre:'11ª BRIGADA DE INFANTERIA DE RESERVAS – NORTE', region_militar_id:2)
+GranUnidad.create(nombre:'CUARTEL GENERAL REGION MILITAR DEL SUR', region_militar_id:3)
+GranUnidad.create(nombre:'3ª BRIGADA DE COMUNICACIONES', region_militar_id:3)
+GranUnidad.create(nombre:'4ª BRIGADA DE MONTAÑA', region_militar_id:3)
+GranUnidad.create(nombre:'3ª BRIGADA BLINDADA', region_militar_id:3)
+GranUnidad.create(nombre:'6ª BRIGADA BLINDADA', region_militar_id:3)
+GranUnidad.create(nombre:'3ª BRIGADA DE CABALLERIA', region_militar_id:3)
+GranUnidad.create(nombre:'5ª BRIGADA DE MONTAÑA', region_militar_id:3)
+GranUnidad.create(nombre:'3ª BRIGADA DE ARTILLERIA', region_militar_id:3)
+GranUnidad.create(nombre:'BRIGADA DE SERVICIOS Nº 113', region_militar_id:3)
+GranUnidad.create(nombre:'COMANDO DE RESERVA Y MOVILIZACION – SUR', region_militar_id:3)
+GranUnidad.create(nombre:'3ª BRIGADA DE INFANTERIA DE RESERVAS – SUR ', region_militar_id:3)
+GranUnidad.create(nombre:'CUARTEL GENERAL REGION MILITAR DEL ORIENTE', region_militar_id:4)
+GranUnidad.create(nombre:'BRIGADA DE SERVICIOS Nº 115', region_militar_id:4)
+GranUnidad.create(nombre:'COMANDO DE RESERVA Y MOVILIZACION – ORIENTE', region_militar_id:4)
+GranUnidad.create(nombre:'CUARTEL GENERAL REGION MILITAR DEL VRAE ', region_militar_id:5)
+GranUnidad.create(nombre:'2ª BRIGADA DE INFANTERIA', region_militar_id:5)
+GranUnidad.create(nombre:'31ª BRIGADA DE INFANTERIA', region_militar_id:5)
+
+# ==================  	REGISTROS DE UNIDAD =========================
+
+Unidad.create(nombre:'Batallón de Tanques (BTQ)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:9)
+Unidad.create(nombre:'Regimiento de Caballería (RC)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:16)
+Unidad.create(nombre:'Regimiento de Caballería Blindada N°1 (RCB N°1)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:9)
+Unidad.create(nombre:'Regimiento de Caballería Blindada N°2 (RCB N°2)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:16)
+Unidad.create(nombre:'Regimiento de Caballería Blindada N°3 (RCB N°3)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:24)
+Unidad.create(nombre:'Regimiento de Caballería Blindada N°4 (RCB N°4)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:21)
+Unidad.create(nombre:'Grupo de Artillería Antiaérea (GAA)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:9)
+Unidad.create(nombre:'Grupo de Artillería Blindada (GAB)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:24)
+Unidad.create(nombre:'Grupo de Artillería de Campaña (GAC)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:16)
+Unidad.create(nombre:'Batallón de Infantería (BI)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:21)
+Unidad.create(nombre:'Batallón de Infantería Blindada (BIB)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:31)
+Unidad.create(nombre:'Batallón de Infantería Motorizada N°1 (BIM N°1)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:24)
+Unidad.create(nombre:'Batallón de Infantería Motorizada N°2 (BIM N°2)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:16)
+Unidad.create(nombre:'Batallón de Infantería Motorizada N°3 (BIM N°3)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:9)
+Unidad.create(nombre:'Batallón de Infantería Motorizada N°4 (BIM N°4)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:31)
+Unidad.create(nombre:'Batallón de Infantería de Selva N°1 (BIS N°1)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:21)
+Unidad.create(nombre:'Batallón de Infantería de Selva N°2 (BIS N°2)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:24)
+Unidad.create(nombre:'Batallón de Infantería de Selva N°3 (BIS N°3)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:34)
+Unidad.create(nombre:'Batallón de Infantería de Selva N°4 (BIS N°4)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:4)
+Unidad.create(nombre:'Batallón Contrasubversivos N°1 (BCS N°1)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:7)
+Unidad.create(nombre:'Batallón Contrasubversivos N°2 (BCS N°2)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:21)
+Unidad.create(nombre:'Batallón Contrasubversivos N°3 (BCS N°3)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:34)
+Unidad.create(nombre:'Batallón Contrasubversivos N°4 (BCS N°4)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:24)
+Unidad.create(nombre:'Batallón de Comandos (BC)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:24)
+Unidad.create(nombre:'Batallón de Ingeniería N°1 (BING N°1)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:31)
+Unidad.create(nombre:'Batallón de Ingeniería N°2 (BING N°2)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:4)
+Unidad.create(nombre:'Batallón de Ingeniería N°3 (BING N°3)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:21)
+Unidad.create(nombre:'Batallón de Ingeniería N°4 (BING N°4)', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:7)
+Unidad.create(nombre:'Batallón de Construcción', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:16)
+Unidad.create(nombre:'Batallón de Combate Blindado ', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:34)
+Unidad.create(nombre:'Batallón de Combate Motorizado', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:7)
+Unidad.create(nombre:'Batallón de Ingeniería de Combate de Selva', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:31)
+Unidad.create(nombre:'Batallón de Asuntos Civiles', himno:'Es en Tacna la heroica ciudad
+Donde estan los blindados de hoy
+Que conforman un RCB
+Su orgullo de todo el Perú
+Es el 3 Regimineto de honor
+Centinela celoso guardiá
+De la amada frontera asutral
+De nuestra patria sin igual
+Arriba RCB San Martin
+Que lleva el nombre del libertador
+Arriba RCB San Martin
+Tu brillante pasado es ejemplo de honor
+De los que en tus filas sirvieron
+Con gran coraje y pundonor.', lema:'En Junin, con los sables
+En el sur, con los tanques
+Y por siempre, venceremos
+RCB -3, invencibles
+Viva el Perú, Viva', gran_unidad_id:4)
+
+# ==================  	REGISTROS DE TIPO DE GRADO =========================
+Grado.create(denominacion: "Soldado")
+Grado.create(denominacion: "Cabo")
+Grado.create(denominacion: "Sargento Segundo")
+Grado.create(denominacion: "Sargento Primera")

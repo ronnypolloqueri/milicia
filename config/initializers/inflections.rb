@@ -15,10 +15,13 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   	inflect.irregular 'departamento', 'departamentos'
   	inflect.irregular 'infraccion', 'infracciones'
   	inflect.irregular 'curso', 'cursos'
-    inflect.uncountable %w( region_militar gran_unidad)
+  	inflect.irregular 'grado', 'grados'
+    inflect.uncountable %w( region_militar)
+    inflect.uncountable %w( gran_unidad unidad)
 end
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
 

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @gran_unidad.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @gran_unidad.descripcion %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @gran_unidad.fecha_inicio %>
+</p>
+
+<p>
+  <strong>Fecha fin:</strong>
+  <%= @gran_unidad.fecha_fin %>
+</p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @gran_unidad.lugar %>
+</p>
+
+<p>
+  <strong>Region militar:</strong>
+  <%= @gran_unidad.region_militar %>
+</p>
+
+<%= link_to 'Edit', edit_gran_unidad_path(@gran_unidad) %> |
+<%= link_to 'Back', gran_unidad_index_path %>

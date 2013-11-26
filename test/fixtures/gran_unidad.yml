@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  descripcion: MyText
+  fecha_inicio: 2013-11-25
+  fecha_fin: 2013-11-25
+  lugar: MyString
+  region_militar_id: 
+
+two:
+  nombre: MyString
+  descripcion: MyText
+  fecha_inicio: 2013-11-25
+  fecha_fin: 2013-11-25
+  lugar: MyString
+  region_militar_id: 

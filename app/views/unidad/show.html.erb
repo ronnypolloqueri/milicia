@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @unidad.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @unidad.descripcion %>
+</p>
+
+<p>
+  <strong>Himno:</strong>
+  <%= @unidad.himno %>
+</p>
+
+<p>
+  <strong>Lema:</strong>
+  <%= @unidad.lema %>
+</p>
+
+<p>
+  <strong>Gran unidad:</strong>
+  <%= @unidad.gran_unidad %>
+</p>
+
+<%= link_to 'Edit', edit_unidad_path(@unidad) %> |
+<%= link_to 'Back', unidad_index_path %>

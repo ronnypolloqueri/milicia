@@ -1,0 +1,37 @@
+<h1>Listing gran_unidad</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Fecha inicio</th>
+      <th>Fecha fin</th>
+      <th>Lugar</th>
+      <th>Region militar</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gran_unidad.each do |gran_unidad| %>
+      <tr>
+        <td><%= gran_unidad.nombre %></td>
+        <td><%= gran_unidad.descripcion %></td>
+        <td><%= gran_unidad.fecha_inicio %></td>
+        <td><%= gran_unidad.fecha_fin %></td>
+        <td><%= gran_unidad.lugar %></td>
+        <td><%= gran_unidad.region_militar %></td>
+        <td><%= link_to 'Show', gran_unidad %></td>
+        <td><%= link_to 'Edit', edit_gran_unidad_path(gran_unidad) %></td>
+        <td><%= link_to 'Destroy', gran_unidad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gran unidad', new_gran_unidad_path %>

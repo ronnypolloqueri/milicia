@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125194748) do
+ActiveRecord::Schema.define(version: 20131126120045) do
 
   create_table "cursos", force: true do |t|
     t.string   "nombre"
@@ -38,6 +38,25 @@ ActiveRecord::Schema.define(version: 20131125194748) do
 
   add_index "distritos", ["provincia_id"], name: "index_distritos_on_provincia_id"
 
+  create_table "grados", force: true do |t|
+    t.string   "denominacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gran_unidad", force: true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.date     "fecha_inicio"
+    t.date     "fecha_fin"
+    t.string   "lugar"
+    t.integer  "region_militar_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "gran_unidad", ["region_militar_id"], name: "index_gran_unidad_on_region_militar_id"
+
   create_table "infracciones", force: true do |t|
     t.text     "denominacion"
     t.datetime "created_at"
@@ -60,5 +79,17 @@ ActiveRecord::Schema.define(version: 20131125194748) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "unidad", force: true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.text     "himno"
+    t.text     "lema"
+    t.integer  "gran_unidad_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "unidad", ["gran_unidad_id"], name: "index_unidad_on_gran_unidad_id"
 
 end

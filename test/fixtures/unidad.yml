@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  descripcion: MyText
+  himno: MyText
+  lema: MyText
+  gran_unidad_id: 
+
+two:
+  nombre: MyString
+  descripcion: MyText
+  himno: MyText
+  lema: MyText
+  gran_unidad_id: 

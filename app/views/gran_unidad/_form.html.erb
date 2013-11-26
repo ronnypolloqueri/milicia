@@ -1,0 +1,41 @@
+<%= form_for(@gran_unidad) do |f| %>
+  <% if @gran_unidad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gran_unidad.errors.count, "error") %> prohibited this gran_unidad from being saved:</h2>
+
+      <ul>
+      <% @gran_unidad.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_inicio %><br>
+    <%= f.date_select :fecha_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_fin %><br>
+    <%= f.date_select :fecha_fin %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar %><br>
+    <%= f.text_field :lugar %>
+  </div>
+  <div class="field">
+    <%= f.label :region_militar %><br>
+    <%= f.text_field :region_militar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
