@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Be sure to restart your server when you modify this file.
 
 # Add new inflection rules using the following format. Inflections
@@ -9,16 +10,38 @@
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
 # end
+# ActiveSupport::Inflector.inflections(:en) do |inflect|
+#   	inflect.irregular 'distrito', 'distritos'
+#   	inflect.irregular 'provincia', 'provincias'
+#   	inflect.irregular 'departamento', 'departamentos'
+#   	inflect.irregular 'infraccion', 'infracciones'
+#   	inflect.irregular 'curso', 'cursos'
+#   	inflect.irregular 'grado', 'grados'
+#     inflect.uncountable %w( region_militar)
+#     inflect.uncountable %w( gran_unidad unidad)
+# end
+
+ActiveSupport::Inflector.inflections.clear
+
+# Agregamos las reglas de inflección
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-  	inflect.irregular 'distrito', 'distritos'
-  	inflect.irregular 'provincia', 'provincias'
-  	inflect.irregular 'departamento', 'departamentos'
-  	inflect.irregular 'infraccion', 'infracciones'
-  	inflect.irregular 'curso', 'cursos'
-  	inflect.irregular 'grado', 'grados'
-    inflect.uncountable %w( region_militar)
-    inflect.uncountable %w( gran_unidad unidad)
+	inflect.plural(/$/, 's')
+    inflect.plural(/([^aeéiou])$/i, '\1es')
+    inflect.plural(/([aeiou]s)$/i, '\1')
+    inflect.plural(/z$/i, 'ces')
+    inflect.plural(/á([sn])$/i, 'a\1es')
+    inflect.plural(/é([sn])$/i, 'e\1es')
+    inflect.plural(/í([sn])$/i, 'i\1es')
+    inflect.plural(/ó([sn])$/i, 'o\1es')
+    inflect.plural(/ú([sn])$/i, 'u\1es')
+
+    inflect.singular(/s$/, '')
+    inflect.singular(/es$/, '')
+
+    inflect.irregular('el', 'los')
+  	inflect.uncountable %w( personal region_militar gran_unidad unidad )
 end
+
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
