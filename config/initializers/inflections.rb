@@ -36,7 +36,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 
   inflect.plural /^(el)$/, 'los'
   # Por defecto incluye case sensitive
-  inflect.uncountable %w(  personal regionmilitar granunidad unidad )
+  inflect.uncountable %w(  personal region_militar regionmilitar gran_unidad granunidad unidad )
 
 end
 
