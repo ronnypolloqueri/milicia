@@ -2,18 +2,22 @@
 
 <p>
   <strong>Nombre:</strong>
-  <%= @region_militar.nombre %>
+  <h1><%= @region_militar.nombre %></h1>
 </p>
-
+<ul>
+	<li><a href="#himno">Himno</a> </li>
+</ul>
 <p>
   <strong>Descripcion:</strong>
-  <%= @region_militar.descripcion %>
+  <%=raw @region_militar.descripcion %>
 </p>
 
+<div id="himno">
 <p>
   <strong>Himno:</strong>
-  <%= @region_militar.himno %>
+  <%= raw @region_militar.himno %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_region_militar_path(@region_militar) %> |
 <%= link_to 'Back', region_militar_index_path %>
