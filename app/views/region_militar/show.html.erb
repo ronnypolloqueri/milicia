@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
-
+<div id="inicio"></div>
 <p>
   <strong>Nombre:</strong>
   <h1><%= @region_militar.nombre %></h1>
 </p>
 <ul>
 	<li><a href="#himno">Himno</a> </li>
+	<li><a href="#grandes_unidades">Grandes Unidades</a> </li>
 </ul>
 <p>
   <strong>Descripcion:</strong>
@@ -17,6 +18,20 @@
   <strong>Himno:</strong>
   <%= raw @region_militar.himno %>
 </p>
+</div>
+<div>
+	<a href="#inicio">Regresar</a>
+</div>
+<div id="grandes_unidades">
+	<strong>Grandes Unidades:</strong>
+	<ul>
+		<% @grandes_unidades.each do |gran_unidad| %>
+			<li><%= link_to gran_unidad.nombre, gran_unidad %></li>
+		<% end %>
+	</ul>
+</div>
+<div>
+<a href="#inicio">Regresar</a>
 </div>
 
 <%= link_to 'Edit', edit_region_militar_path(@region_militar) %> |

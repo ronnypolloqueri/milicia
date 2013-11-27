@@ -10,6 +10,8 @@ class RegionMilitarController < ApplicationController
   # GET /region_militar/1
   # GET /region_militar/1.json
   def show
+    # @grandes_unidades = RegionMilitar.find(params[:id])gran_unidad
+    @grandes_unidades = @region_militar.gran_unidad
   end
 
   # GET /region_militar/new
