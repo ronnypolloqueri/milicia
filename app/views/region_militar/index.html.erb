@@ -1,12 +1,9 @@
-<h1>Listing región_militar</h1>
+<h1>Regiones Militares</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-      <th>Himno</th>
-      <th></th>
+      <th><h2>Nombre</h2></th>
       <th></th>
       <th></th>
     </tr>
@@ -15,12 +12,9 @@
   <tbody>
     <% @region_militar.each do |region_militar| %>
       <tr>
-        <td><%= region_militar.nombre %></td>
-        <td><%= region_militar.descripcion %></td>
-        <td><%= region_militar.himno %></td>
-        <td><%= link_to 'Show', region_militar %></td>
-        <td><%= link_to 'Edit', edit_region_militar_path(region_militar) %></td>
-        <td><%= link_to 'Destroy', region_militar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to region_militar.nombre, region_militar %></td>
+        <td><%= link_to 'Editar', edit_region_militar_path(region_militar) %></td>
+        <td><%= link_to 'Eliminar', region_militar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Region militar', new_region_militar_path %>
+<%= link_to 'Nueva Region militar', new_region_militar_path %>
