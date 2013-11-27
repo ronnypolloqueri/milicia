@@ -1,4 +1,8 @@
 Milicia::Application.routes.draw do
+  resources :cuarteles
+
+  resources :personal
+
   resources :unidad
 
   resources :gran_unidad

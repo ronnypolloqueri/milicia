@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @cuartel.nombre %>
+</p>
+
+<p>
+  <strong>Distrito:</strong>
+  <%= @cuartel.distrito %>
+</p>
+
+<p>
+  <strong>Localizacion:</strong>
+  <%= @cuartel.localizacion %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @cuartel.descripcion %>
+</p>
+
+<p>
+  <strong>Himno:</strong>
+  <%= @cuartel.himno %>
+</p>
+
+<p>
+  <strong>Lema:</strong>
+  <%= @cuartel.lema %>
+</p>
+
+<%= link_to 'Edit', edit_cuartel_path(@cuartel) %> |
+<%= link_to 'Back', cuarteles_path %>

@@ -1,0 +1,59 @@
+<h1>Listing personal</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Unidad</th>
+      <th>Distrito</th>
+      <th>Cuartel</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Dni</th>
+      <th>Fecha nacimiento</th>
+      <th>Nro carnet militar</th>
+      <th>Grupo sanguineo</th>
+      <th>Factor rh</th>
+      <th>Sexo</th>
+      <th>Talla</th>
+      <th>Peso</th>
+      <th>Color ojos</th>
+      <th>Color cabello</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personal.each do |personal| %>
+      <tr>
+        <td><%= personal.unidad %></td>
+        <td><%= personal.distrito %></td>
+        <td><%= personal.cuartel %></td>
+        <td><%= personal.nombres %></td>
+        <td><%= personal.apellidos %></td>
+        <td><%= personal.dni %></td>
+        <td><%= personal.fecha_nacimiento %></td>
+        <td><%= personal.nro_carnet_militar %></td>
+        <td><%= personal.grupo_sanguineo %></td>
+        <td><%= personal.factor_rh %></td>
+        <td><%= personal.sexo %></td>
+        <td><%= personal.talla %></td>
+        <td><%= personal.peso %></td>
+        <td><%= personal.color_ojos %></td>
+        <td><%= personal.color_cabello %></td>
+        <td><%= personal.direccion %></td>
+        <td><%= personal.telefono %></td>
+        <td><%= link_to 'Show', personal %></td>
+        <td><%= link_to 'Edit', edit_personal_path(personal) %></td>
+        <td><%= link_to 'Destroy', personal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personal', new_personal_path %>

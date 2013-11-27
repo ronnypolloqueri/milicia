@@ -23,24 +23,48 @@
 
 ActiveSupport::Inflector.inflections.clear
 
-# Agregamos las reglas de inflección
+# /i, case sensitive-> No importara mayusculas o minusculas
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-	inflect.plural(/$/, 's')
-    inflect.plural(/([^aeéiou])$/i, '\1es')
-    inflect.plural(/([aeiou]s)$/i, '\1')
-    inflect.plural(/z$/i, 'ces')
-    inflect.plural(/á([sn])$/i, 'a\1es')
-    inflect.plural(/é([sn])$/i, 'e\1es')
-    inflect.plural(/í([sn])$/i, 'i\1es')
-    inflect.plural(/ó([sn])$/i, 'o\1es')
-    inflect.plural(/ú([sn])$/i, 'u\1es')
+  # inflect.plural /^(ox)$/i, '\1en'
+  # inflect.singular /^(ox)en/i, '\1'
 
-    inflect.singular(/s$/, '')
-    inflect.singular(/es$/, '')
+  inflect.plural /$/, '\1s'
+  inflect.plural /([dlnr])([A-Z]|_|$)/, '\1es\2'
 
-    inflect.irregular('el', 'los')
-  	inflect.uncountable %w( personal region_militar gran_unidad unidad )
+  inflect.singular /s$/, '\1'
+  inflect.singular /es$/, '\1'
+
+  inflect.plural /^(el)$/, 'los'
+  # Por defecto incluye case sensitive
+  inflect.uncountable %w(  personal regionmilitar granunidad unidad )
+
 end
+
+
+
+# Agregamos las reglas de inflección
+# ActiveSupport::Inflector.inflections(:en) do |inflect|
+# 	inflect.plural(/$/, 's')
+#     inflect.plural(/([^aeéiou])$/i, '\1es')
+#     inflect.plural(/([aeiou]s)$/i, '\1')
+#     inflect.plural(/z$/i, 'ces')
+#     inflect.plural(/á([sn])$/i, 'a\1es')
+#     inflect.plural(/é([sn])$/i, 'e\1es')
+#     inflect.plural(/í([sn])$/i, 'i\1es')
+#     inflect.plural(/ó([sn])$/i, 'o\1es')
+#     inflect.plural(/ú([sn])$/i, 'u\1es')
+
+#     inflect.plural(/([rlnd])([A-Z]|_|$)/, '\1es\2')
+#     # inflect.irregular 'cuartel','cuarteles'
+#     # inflect.plural(/([aeiou])([A-Z]|_|$)([a-z]+)([rlnd])($)/, '\1s\2\3\4es\5')
+#     # inflect.plural(/([rlnd])([A-Z]|_|$)([a-z]+)([aeiou])($)/, '\1es\2\3\4s\5')
+
+#     inflect.singular(/s$/, '')
+#     inflect.singular(/es$/, '')
+
+#     inflect.irregular('el', 'los')
+#   	inflect.uncountable %w(  personal region_militar gran_unidad unidad )
+# end
 
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|

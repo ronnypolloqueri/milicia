@@ -1,0 +1,37 @@
+<h1>Listing cuarteles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Distrito</th>
+      <th>Localizacion</th>
+      <th>Descripcion</th>
+      <th>Himno</th>
+      <th>Lema</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cuarteles.each do |cuartel| %>
+      <tr>
+        <td><%= cuartel.nombre %></td>
+        <td><%= cuartel.distrito %></td>
+        <td><%= cuartel.localizacion %></td>
+        <td><%= cuartel.descripcion %></td>
+        <td><%= cuartel.himno %></td>
+        <td><%= cuartel.lema %></td>
+        <td><%= link_to 'Show', cuartel %></td>
+        <td><%= link_to 'Edit', edit_cuartel_path(cuartel) %></td>
+        <td><%= link_to 'Destroy', cuartel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cuartel', new_cuartel_path %>

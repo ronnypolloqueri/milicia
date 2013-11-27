@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  unidad_id: 
+  distrito_id: 
+  cuartel_id: 
+  nombres: MyString
+  apellidos: MyString
+  dni: MyString
+  fecha_nacimiento: 2013-11-26
+  nro_carnet_militar: MyString
+  grupo_sanguineo: MyString
+  factor_rh: false
+  sexo: false
+  talla: 1.5
+  peso: 1.5
+  color_ojos: MyString
+  color_cabello: MyString
+  direccion: MyString
+  telefono: MyString
+
+two:
+  unidad_id: 
+  distrito_id: 
+  cuartel_id: 
+  nombres: MyString
+  apellidos: MyString
+  dni: MyString
+  fecha_nacimiento: 2013-11-26
+  nro_carnet_militar: MyString
+  grupo_sanguineo: MyString
+  factor_rh: false
+  sexo: false
+  talla: 1.5
+  peso: 1.5
+  color_ojos: MyString
+  color_cabello: MyString
+  direccion: MyString
+  telefono: MyString
