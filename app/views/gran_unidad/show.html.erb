@@ -39,5 +39,17 @@
   <%= link_to @gran_unidad.region_militar.nombre,  @gran_unidad.region_militar %>
 </p>
 
+<div id="unidades">
+  <strong>Grandes Unidades:</strong>
+  <ul>
+    <% @unidades.each do |unidad| %>
+      <li><%= link_to unidad.nombre, unidad %></li>
+    <% end %>
+  </ul>
+</div>
+<div>
+<a href="#inicio">Regresar</a>
+</div>
+
 <%= link_to 'Edit', edit_gran_unidad_path(@gran_unidad) %> |
 <%= link_to 'Back', gran_unidad_index_path %>

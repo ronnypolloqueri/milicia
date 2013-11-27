@@ -10,6 +10,7 @@ class GranUnidadController < ApplicationController
   # GET /gran_unidad/1
   # GET /gran_unidad/1.json
   def show
+    @unidades = @gran_unidad.unidad
   end
 
   # GET /gran_unidad/new

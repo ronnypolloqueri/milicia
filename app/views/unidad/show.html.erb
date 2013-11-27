@@ -2,17 +2,17 @@
 
 <p>
   <strong>Nombre:</strong>
-  <%= @unidad.nombre %>
+  <h1><%= @unidad.nombre %></h1>
 </p>
 
 <p>
   <strong>Descripcion:</strong>
-  <%= strip_tags(@unidad.descripcion) %>
+  <%= raw @unidad.descripcion %>
 </p>
 
 <p>
   <strong>Himno:</strong>
-  <%= @unidad.himno %>
+  <%= raw @unidad.himno %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Gran unidad:</strong>
-  <%= @unidad.gran_unidad %>
+  <%= link_to @unidad.gran_unidad.nombre, @unidad.gran_unidad %>
 </p>
 
 <%= link_to 'Edit', edit_unidad_path(@unidad) %> |

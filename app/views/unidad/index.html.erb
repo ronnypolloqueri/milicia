@@ -1,14 +1,10 @@
-<h1>Listing unidad</h1>
+<h1>Unidades</h1>
 
 <table>
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Descripcion</th>
-      <th>Himno</th>
-      <th>Lema</th>
       <th>Gran unidad</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -17,14 +13,10 @@
   <tbody>
     <% @unidad.each do |unidad| %>
       <tr>
-        <td><%= unidad.nombre %></td>
-        <td><%= unidad.descripcion %></td>
-        <td><%= unidad.himno %></td>
-        <td><%= unidad.lema %></td>
-        <td><%= unidad.gran_unidad %></td>
-        <td><%= link_to 'Show', unidad %></td>
-        <td><%= link_to 'Edit', edit_unidad_path(unidad) %></td>
-        <td><%= link_to 'Destroy', unidad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to unidad.nombre, unidad %></td>
+        <td><%= unidad.gran_unidad.nombre %></td>
+        <td><%= link_to 'Editar', edit_unidad_path(unidad) %></td>
+        <td><%= link_to 'Eliminar', unidad, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
