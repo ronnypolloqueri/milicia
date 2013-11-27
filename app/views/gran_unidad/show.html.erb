@@ -1,9 +1,18 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Nombre:</strong>
-  <%= @gran_unidad.nombre %>
+  <h1><%= @gran_unidad.nombre %></h1>
 </p>
+
+<ul>
+  <li><a href="#himno">Himno</a> </li>
+  <li><a href="#grandes_unidades">Grandes Unidades</a> </li>
+  <ul>
+    <%= link_to 'Anterior', anterior(@gran_unidad.id) %>
+    <%= link_to 'Siguiente', siguiente(@gran_unidad.id) %>
+  </ul>
+</ul>
+
 
 <p>
   <strong>Descripcion:</strong>
@@ -27,7 +36,7 @@
 
 <p>
   <strong>Region militar:</strong>
-  <%= @gran_unidad.region_militar %>
+  <%= link_to @gran_unidad.region_militar.nombre,  @gran_unidad.region_militar %>
 </p>
 
 <%= link_to 'Edit', edit_gran_unidad_path(@gran_unidad) %> |
