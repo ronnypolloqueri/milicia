@@ -8,7 +8,11 @@ class PersonalController < ApplicationController
   end
 
   def por_grupo_sanguineo
-    @personal = Personal.where("grupo_sanguineo = ?", params[:grupo_sanguineo])
+    unless params[:grupo_sanguineo].nil?
+      @personal = Personal.where("grupo_sanguineo = ?", params[:grupo_sanguineo])
+    else
+      @personal = Personal.where("grupo_sanguineo = ?", 'A')
+    end
   end
 
   def por_cuartel
