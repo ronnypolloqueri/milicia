@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<ul>
+  <li><%= link_to 'Anterior', anterior(@cuartel) %></li>
+  <li><%= link_to 'Siguiente', siguiente(@cuartel) %></li>
+</ul>
 <p>
   <strong>Nombre:</strong>
   <%= @cuartel.nombre %>
@@ -17,7 +20,7 @@
 
 <p>
   <strong>Descripcion:</strong>
-  <%= @cuartel.descripcion %>
+  <%= raw @cuartel.descripcion %>
 </p>
 
 <p>

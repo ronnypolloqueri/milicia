@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Fecha nacimiento</th>
+      <th>Sexo</th>
+      <th>Unidad</th>
+      <th>Cuartel</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personal.each do |personal| %>
+      <tr>
+        <td><%= personal.nombres %></td>
+        <td><%= personal.apellidos %></td>
+        <td><%= personal.fecha_nacimiento %></td>
+        <td><%= personal.get_sexo %></td>
+        <td><%= personal.unidad.nombre %></td>
+        <td><%= personal.cuartel.nombre %></td>
+        <td><%= link_to 'Ver', personal %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

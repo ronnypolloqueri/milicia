@@ -7,6 +7,19 @@ class PersonalController < ApplicationController
     @personal = Personal.all
   end
 
+  def por_grupo_sanguineo
+    @personal = Personal.where("grupo_sanguineo = ?", params[:grupo_sanguineo])
+  end
+
+  def por_cuartel
+    @cuartel = Cuartel.find(params[:cuartel_id])
+    @personal = @cuartel.personal
+  end
+
+  def por_apellido
+    # @personal = Personal.
+  end
+
   # GET /personal/1
   # GET /personal/1.json
   def show

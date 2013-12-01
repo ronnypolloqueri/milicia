@@ -19,5 +19,8 @@ module Milicia
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
+    # http://www.erikminkel.com/2013/09/01/twitter-bootstrap-3-in-a-rails-4-application/
+    # En la ultimas versiones no es necario configurar el path de los fonts
+    # config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
   end
 end
