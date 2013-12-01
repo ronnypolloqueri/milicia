@@ -11,4 +11,16 @@ class Personal < ActiveRecord::Base
   		'Femenino'
   	end
   end
+
+  def get_apellidos_nombres
+    apellidos + ", " + nombres
+  end
+
+  def get_factor_rh
+    if factor_rh
+      '+'
+    else
+      '-'
+    end
+  end
 end

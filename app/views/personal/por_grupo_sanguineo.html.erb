@@ -1,9 +1,10 @@
 <h1>Personal por Grupo Sanguíneo: </h1>
-<ul>
-	<li><%= link_to 'A', por_grupo_sanguineo_path('A') %></li>
-	<li><%= link_to 'B', por_grupo_sanguineo_path('B') %></li>
-	<li><%= link_to 'AB', por_grupo_sanguineo_path('AB') %></li>
-	<li><%= link_to 'O', por_grupo_sanguineo_path('O') %></li>
-</ul>
+<div class="btn-group btn-group-justified">
+
+	<%= link_to 'A', por_grupo_sanguineo_path('A'), class: 'btn btn-default' %>
+	<%= link_to 'B', por_grupo_sanguineo_path('B'), class: 'btn btn-default' %>
+	<%= link_to 'AB', por_grupo_sanguineo_path('AB'), class: 'btn btn-default' %>
+	<%= link_to 'O', por_grupo_sanguineo_path('O'), class: 'btn btn-default' %>
+</div>
 <hr>
 <%= render partial: "listado" %>
