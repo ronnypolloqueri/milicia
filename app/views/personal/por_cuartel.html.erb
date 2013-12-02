@@ -1,37 +1,30 @@
-<h1>Personal Militar</h1>
+<h1>Personal por Cuartel</h1>
 
-<table>
+<hr/>
+<div class="btn-group btn-group-justified">
+  <%= link_to "<< " + anterior(@cuartel).nombre, por_cuartel_path(anterior(@cuartel)), class: 'btn btn-default' %>
+  <%= link_to @cuartel.nombre, por_cuartel_path(@cuartel.id), class: 'btn btn-default' %>
+  <%= link_to siguiente(@cuartel).nombre + " >>", por_cuartel_path(siguiente(@cuartel)), class: 'btn btn-default' %>
+</div>
+
+<table class="table table-responsive table-striped">
   <thead>
     <tr>
-      <th>Nombres</th>
-      <th>Apellidos</th>
-      <th>Fecha nacimiento</th>
-      <th>Sexo</th>
+      <th>Apellidos y Nombres</th>
+      <th>Carnet Militar</th>
       <th>Unidad</th>
       <th>Cuartel</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @personal.each do |personal| %>
       <tr>
-        <td><%= personal.nombres %></td>
-        <td><%= personal.apellidos %></td>
-        <td><%= personal.fecha_nacimiento %></td>
-        <td><%= personal.get_sexo %></td>
+        <td><%= link_to personal.get_apellidos_nombres , personal%></td>
+        <td><%= personal.nro_carnet_militar %></td>
         <td><%= personal.unidad.nombre %></td>
         <td><%= personal.cuartel.nombre %></td>
-        <td><%= link_to 'Ver', personal %></td>
-        <td><%= link_to 'Editar', edit_personal_path(personal) %></td>
-        <td><%= link_to 'Eliminar', personal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Personal', new_personal_path %>

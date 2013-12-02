@@ -11,6 +11,7 @@ class PersonalController < ApplicationController
       @personal = Personal.where("grupo_sanguineo = ?", params[:grupo_sanguineo])
   end
 
+  # Ver orden
   def por_cuartel
     @cuartel = Cuartel.find(params[:cuartel_id])
     @personal = @cuartel.personal

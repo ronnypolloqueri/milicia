@@ -24,8 +24,9 @@
                   <ul class="dropdown-menu">
                     <li><%= link_to 'Por Apellidos', por_apellidos_path('A')%></li>
                     <li><%= link_to 'Por Grupo Sanguíneo', por_grupo_sanguineo_path('A')%></li>
-                    <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
+                    <li><%= link_to 'Por Cuartel', por_cuartel_path('1')%></li>
+                    <li><a href="#">Something else here</a></li>
                     <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">One more separated link</a></li>
@@ -39,16 +40,3 @@
       </div>
     </div>
 
-<div>
-	<ul>
-		<li><%= link_to 'Regiones Militares', region_militar_index_path  %></li>
-		<li><%= link_to 'Grandes Unidades', gran_unidad_index_path  %></li>
-		<li><%= link_to 'Unidades', unidad_index_path  %></li>
-		<li><%= link_to 'Cuarteles', cuarteles_path %></li>
-		<li><%= link_to 'Personal', personal_index_path %></li>
-		<ul>
-			<li><a href="#por_cuartel">Por Cuartel</a></li>
-		</ul>
-	</ul>
-	<hr/>
-</div>

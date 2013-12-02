@@ -7,21 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render "partials/navbar" %>
-
-<%= yield %>
-
-
-<hr/>
-<div id='por_cuartel'>
-	<% @cuarteles = Cuartel.all %>
-    <% @cuarteles.each do |cuartel| %>
-    <ul>
-        <li><%= link_to cuartel.nombre, por_cuartel_path(cuartel.id) %></li>
-    </ul>
-    <% end %>
-</div>
-
-<%= render "partials/footer" %>
+  <%= render "partials/navbar" %>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div class="container">
+    <%= yield %>
+  </div>
+    <%= render "partials/footer" %>
 </body>
 </html>

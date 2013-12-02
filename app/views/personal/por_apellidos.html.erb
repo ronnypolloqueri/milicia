@@ -1,4 +1,4 @@
-<h1>Personal por Grupo Sanguíneo: </h1>
+<h1>Personal por Apellidos: </h1>
 <div class="btn-group btn-group-justified">
 
 	<% ('A'..'Z').each do |letra| %>
@@ -6,4 +6,27 @@
 	<% end %>
 </div>
 <hr>
-<%= render partial: "listado" %>
+
+
+
+<table class="table table-responsive table-striped">
+  <thead>
+    <tr>
+      <th>Apellidos y Nombres</th>
+      <th>Carnet Militar</th>
+      <th>Unidad</th>
+      <th>Cuartel</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personal.each do |personal| %>
+      <tr>
+        <td><%= link_to personal.get_apellidos_nombres , personal%></td>
+        <td><%= personal.nro_carnet_militar %></td>
+        <td><%= personal.unidad.nombre %></td>
+        <td><%= personal.cuartel.nombre %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
