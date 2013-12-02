@@ -1,0 +1,9 @@
+<h1>Personal por Grupo Sanguíneo: </h1>
+<div class="btn-group btn-group-justified">
+
+	<% ('A'..'Z').each do |letra| %>
+	<%= link_to "#{letra}", por_apellidos_path("#{letra}"), class: 'btn btn-default' %>
+	<% end %>
+</div>
+<hr>
+<%= render partial: "listado" %>

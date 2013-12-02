@@ -8,11 +8,7 @@ class PersonalController < ApplicationController
   end
 
   def por_grupo_sanguineo
-    unless params[:grupo_sanguineo].nil?
       @personal = Personal.where("grupo_sanguineo = ?", params[:grupo_sanguineo])
-    else
-      @personal = Personal.where("grupo_sanguineo = ?", 'A')
-    end
   end
 
   def por_cuartel
@@ -20,8 +16,9 @@ class PersonalController < ApplicationController
     @personal = @cuartel.personal
   end
 
-  def por_apellido
-    # @personal = Personal.
+  def por_apellidos
+    # validar
+    @personal = Personal.find_by_sql("SELECT * FROM personal WHERE apellidos LIKE '#{params[:inicial]}%'")
   end
 
   # GET /personal/1
