@@ -8,7 +8,13 @@ class PersonalController < ApplicationController
   end
 
   def por_grupo_sanguineo
-      @personal = Personal.where("grupo_sanguineo = ?", params[:grupo_sanguineo])
+    @personal = Personal.where("grupo_sanguineo = ?", params[:grupo_sanguineo])
+  end
+
+  def por_grupo_sanguineo_show
+    # @personal_ids = objetos2array_int(Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos'))
+    @personal_ids = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
+    @persona  = Personal.find(params[:id])
   end
 
   # Ver orden

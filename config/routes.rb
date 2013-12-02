@@ -22,6 +22,8 @@ Milicia::Application.routes.draw do
   get 'cuarteles/:cuartel_id/personal/' => 'personal#por_cuartel', as: :por_cuartel
 
   get 'personal/grupo_sanguineo/:grupo_sanguineo' => 'personal#por_grupo_sanguineo', as: :por_grupo_sanguineo
+  get 'personal/grupo_sanguineo/:grupo_sanguineo/:id' => 'personal#por_grupo_sanguineo_show', as: :por_grupo_sanguineo_show
+
   get 'personal/apellidos/:inicial' => 'personal#por_apellidos', as: :por_apellidos
   # et 'personal/grupo_sanguineo' => 'personal#grupo_sanguineo', as: :grupo_sanguineo
   # Example of named route that can be invoked with purchase_url(id: product.id)

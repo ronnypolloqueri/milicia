@@ -18,4 +18,11 @@ module ApplicationHelper
 	def numero_de_registros(objeto)
 		(objeto.class).count
 	end
+
+	def objectos2array_int(objetos)
+		array = []
+		objetos.each do |objeto|
+			array.push(objeto.id)
+		end
+	end
 end

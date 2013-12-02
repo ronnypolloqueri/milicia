@@ -23,6 +23,4 @@ class Personal < ActiveRecord::Base
       '-'
     end
   end
-
-
 end

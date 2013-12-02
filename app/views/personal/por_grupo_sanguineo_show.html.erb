@@ -1,0 +1,97 @@
+<%= @personal_ids.inspect %>
+<%= @personal_ids.class%>
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-offset-1">
+  <p>
+    <h1><%= @persona.get_apellidos_nombres %></h1>
+  </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-1">
+    <p>
+      <strong>Nro carnet militar:</strong>
+      <%= @persona.nro_carnet_militar %>
+    </p>
+    <p>
+      <strong>Dni:</strong>
+      <%= @persona.dni %>
+    </p>
+
+    <hr/>
+
+    <p>
+      <strong>Cuartel:</strong>
+      <%= link_to @persona.cuartel.nombre, @persona.cuartel %>
+    </p>
+
+    <p>
+      <strong>Unidad:</strong>
+      <%= link_to @persona.unidad.nombre, @persona.unidad %>
+    </p>
+
+    <p>
+      <strong>Distrito:</strong>
+      <%= @persona.distrito %>
+    </p>
+
+     <hr/>
+    <p>
+      <strong>Fecha nacimiento:</strong>
+      <%= @persona.fecha_nacimiento %>
+    </p>
+
+    <p>
+      <strong>Sexo:</strong>
+      <%= @persona.get_sexo %>
+    </p>
+    <p>
+      <strong>Grupo sanguineo:</strong>
+      <%= @persona.grupo_sanguineo %>
+    </p>
+
+    <p>
+      <strong>Factor rh:</strong>
+      <%= @persona.get_factor_rh %>
+    </p>
+    <p>
+      <strong>Direccion:</strong>
+      <%= @persona.direccion %>
+    </p>
+
+    <p>
+      <strong>Telefono:</strong>
+      <%= @persona.telefono %>
+    </p>
+
+  </div>
+  <div class="col-md-4">
+
+<!-- http://placehold.it/300x280.gif -->
+    <img src="/assets/300x280.gif">
+    <hr/>
+    <p>
+      <strong>Color cabello:</strong>
+      <%= @persona.color_cabello %>
+    </p>
+    <p>
+      <strong>Color ojos:</strong>
+      <%= @persona.color_ojos %>
+    </p>
+
+    <p>
+      <strong>Talla:</strong>
+      <%= @persona.talla %>
+    </p>
+
+    <p>
+      <strong>Peso:</strong>
+      <%= @persona.peso %>
+    </p>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
