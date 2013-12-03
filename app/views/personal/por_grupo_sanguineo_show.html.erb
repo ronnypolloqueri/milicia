@@ -1,7 +1,10 @@
-<%= @personal_ids.inspect %>
-<%= @personal_ids.class%>
+<%= @array.inspect %>
+<%= @array.class%>
 <p id="notice"><%= notice %></p>
-
+<p>
+<%= link_to 'Anterior' , por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal_before(@array, params[:id]) )%>
+<%= link_to 'Siguiente' ,  por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal_next(@array, params[:id]) )%>
+</p>
 <div class="row">
   <div class="col-md-offset-1">
   <p>

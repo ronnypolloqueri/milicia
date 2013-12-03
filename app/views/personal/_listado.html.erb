@@ -12,7 +12,7 @@
   <tbody>
     <% @personal.each do |personal| %>
       <tr>
-        <td><%= link_to personal.get_apellidos_nombres , por_grupo_sanguineo_show_path(id_personal: personal.id)%></td>
+        <td><%= link_to personal.get_apellidos_nombres , por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal.id )%></td>
         <td><%= personal.grupo_sanguineo %></td>
         <td><%= personal.get_factor_rh %></td>
         <td><%= personal.unidad.nombre %></td>
