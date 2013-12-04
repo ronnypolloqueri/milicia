@@ -1,0 +1,20 @@
+<h1>Lista de infracciones</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Tipo de Infraccion</th>
+      <th>Nombre</th>
+      <th>gravedad</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @infracciones.each do |infraccion| %>
+      <tr>
+        <td><%= infraccion.tipo_infraccion %></td>
+        <td><%= truncate(infraccion.nombre, length: 60) %></td>
+        <td><%= infraccion.gravedad %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

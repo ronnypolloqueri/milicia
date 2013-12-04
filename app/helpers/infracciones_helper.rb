@@ -1,0 +1,2 @@
+module InfraccionesHelper
+end

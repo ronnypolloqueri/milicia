@@ -1,4 +1,6 @@
 Milicia::Application.routes.draw do
+  get "infracciones/index", as: :infracciones
+
   resources :cuarteles
 
   resources :personal
