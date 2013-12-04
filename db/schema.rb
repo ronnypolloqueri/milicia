@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126221917) do
+ActiveRecord::Schema.define(version: 20131204161306) do
 
   create_table "cuarteles", force: true do |t|
     t.integer  "distrito_id"
@@ -71,9 +71,11 @@ ActiveRecord::Schema.define(version: 20131126221917) do
   add_index "gran_unidad", ["region_militar_id"], name: "index_gran_unidad_on_region_militar_id"
 
   create_table "infracciones", force: true do |t|
-    t.text     "denominacion"
+    t.text     "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tipo_infraccion"
+    t.string   "gravedad"
   end
 
   create_table "personal", force: true do |t|
