@@ -70,6 +70,6 @@ class GranUnidadController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gran_unidad_params
-      params.require(:gran_unidad).permit(:nombre, :descripcion, :fecha_inicio, :fecha_fin, :lugar, :region_militar_id)
+      params.require(:gran_unidad).permit(:nombre, :descripcion, :himno, :lema, :region_militar_id)
     end
 end
