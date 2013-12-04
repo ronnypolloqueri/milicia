@@ -6,6 +6,10 @@ namespace :ronny do
 	end
 end
 
+# NOTA, recordar tratar los caracteres " " /''
+# ya que estos no deben estar presentes de se necesario
+# usar ss= string.split("'")
+# usar ss.join("\'")
 namespace :ronny do
 	desc "Crea semillas a partir de una base de datos"
 	task :semillas  => :environment do
@@ -20,22 +24,19 @@ namespace :ronny do
 			Dir.mkdir mi_directorio
 			Dir.chdir mi_directorio
 		end
+		def limpiar_caracteres(string)
+			ss = string.split("'")
+			ss.join("\\'")
+		end
 		# chop - Elimina el ultimo caracter
 		File.open('ronny_semillas.txt','w') do |f|
-			f << "Ingresando semillas\n"
+			# f << "Ingresando semillas\n"
 			RegionMilitar.all.each do |rm|
-				s = rm.inspect
-				s = s[2..s.size]
-				s_split = s.split
-				s_split.delete_at(1)
-				s_split.delete_at(1)
-				s_split.insert(1,'.create(')
-				s1 = s_split[0].concat(s_split[1])
-				# Retiro los campos de timestamps
-				s2 = s_split[2..(s_split.size-7)].join(' ');
-				# Retiro la ultima coma ',' y concateno con cierre de )
-				s = s1.concat(s2.chop+")");
-				f << s+"\n"
+				s = 'RegionMilitar.create('
+				s += 'nombre: '+ "'"+ rm.nombre + "'"
+				s += ', descripcion: '+ "'" + limpiar_caracteres(rm.descripcion) + "'"
+				s += ', himno: '+ "'" + rm.himno + "'"
+				f << s+")\n"
 			end
 		end
 		puts "Terminado."
