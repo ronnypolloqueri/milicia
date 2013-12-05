@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204171337) do
+ActiveRecord::Schema.define(version: 20131205192358) do
 
   create_table "cuarteles", force: true do |t|
     t.integer  "distrito_id"
@@ -118,6 +118,12 @@ ActiveRecord::Schema.define(version: 20131204171337) do
     t.string   "nombre"
     t.text     "descripcion"
     t.text     "himno"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipo_armamentos", force: true do |t|
+    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

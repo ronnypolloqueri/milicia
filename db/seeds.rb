@@ -1335,4 +1335,12 @@ Infraccion.create(nombre:'Perder documentación oficial relacionada con la segur
 Infraccion.create(nombre:'Permitir el acceso a documentación oficial a personal ajeno a la Unidad/Dependencia con riesgo de la seguridad o de las operaciones militares', tipo_infraccion:'Documentación oficial/publicaciones', gravedad:'muy grave')
 Infraccion.create(nombre:'Ausentarse de la Unidad/Dependencia/Empleo sin contar con la autorización correspondiente (más de 8 días)', tipo_infraccion:'Ausentarse', gravedad:'muy grave')
 
+# ==================  	REGISTROS DE TIPO DE PERSONAL =========================
+TipoArmamento.create(nombre: 'Pistola')
+TipoArmamento.create(nombre: 'Fusil de combate')
+TipoArmamento.create(nombre: 'Fusil de asalto')
+TipoArmamento.create(nombre: 'Fusil de francotirador')
+TipoArmamento.create(nombre: 'SubFusil Automatico')
+TipoArmamento.create(nombre: 'Ametralladora de propósito general')
+TipoArmamento.create(nombre: 'Lanzagranadas')
 
