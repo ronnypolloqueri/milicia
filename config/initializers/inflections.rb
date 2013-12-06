@@ -29,6 +29,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   # inflect.singular /^(ox)en/i, '\1'
 
   inflect.plural /$/, '\1s'
+  inflect.plural /(s)($)/, '\1es\2'
   inflect.plural /([dlnr])([A-Z]|_|$)/, '\1es\2'
 
   inflect.singular /s$/, '\1'
@@ -36,7 +37,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 
   inflect.plural /^(el)$/, 'los'
   # Por defecto incluye case sensitive
-  inflect.uncountable %w(  personal region_militar regionmilitar gran_unidad granunidad unidad )
+  inflect.uncountable %w(  personal region_militar regionmilitar gran_unidad granunidad tipo_armamento tipoarmamento unidad )
 
 end
 

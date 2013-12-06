@@ -1344,3 +1344,17 @@ TipoArmamento.create(nombre: 'SubFusil Automatico')
 TipoArmamento.create(nombre: 'Ametralladora de propósito general')
 TipoArmamento.create(nombre: 'Lanzagranadas')
 
+# ==================  	REGISTROS DE PAISES =========================
+
+Pais.create(nombre:'Austria',imagen_url:'austria.png')
+Pais.create(nombre:'Israel',imagen_url:'israel.png')
+Pais.create(nombre:'Bélgica',imagen_url:'bélgica.png')
+Pais.create(nombre:'Unión Soviética',imagen_url:'unión_soviética.png')
+Pais.create(nombre:'Perú',imagen_url:'perú.png')
+Pais.create(nombre:'Estados Unidos',imagen_url:'estados_unidos.png')
+Pais.create(nombre:'Alemania',imagen_url:'alemania.png')
+Pais.create(nombre:'Sudáfrica',imagen_url:'sudáfrica.png')
+Pais.create(nombre:'Francia',imagen_url:'francia.png')
+Pais.create(nombre:'Rusia',imagen_url:'rusia.png')
+
+
