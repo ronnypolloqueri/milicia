@@ -1,0 +1,37 @@
+<h1>Listing arma_ligera</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Armamento</th>
+      <th>Alcance efectivo</th>
+      <th>Alcance max</th>
+      <th>Cadencia</th>
+      <th>Sistema disparo</th>
+      <th>Cargador</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arma_ligera.each do |arma_ligera| %>
+      <tr>
+        <td><%= arma_ligera.armamento %></td>
+        <td><%= arma_ligera.alcance_efectivo %></td>
+        <td><%= arma_ligera.alcance_max %></td>
+        <td><%= arma_ligera.cadencia %></td>
+        <td><%= arma_ligera.sistema_disparo %></td>
+        <td><%= arma_ligera.cargador %></td>
+        <td><%= link_to 'Show', arma_ligera %></td>
+        <td><%= link_to 'Edit', edit_arma_ligera_path(arma_ligera) %></td>
+        <td><%= link_to 'Destroy', arma_ligera, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Arma ligera', new_arma_ligera_path %>

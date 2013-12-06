@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  descripcion: MyText
+  peso: 1
+  longitud: 1
+  municion: MyString
+  pais_id: 
+  tipo_armamento_id: 
+
+two:
+  nombre: MyString
+  descripcion: MyText
+  peso: 1
+  longitud: 1
+  municion: MyString
+  pais_id: 
+  tipo_armamento_id: 

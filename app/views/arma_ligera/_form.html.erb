@@ -1,0 +1,41 @@
+<%= form_for(@arma_ligera) do |f| %>
+  <% if @arma_ligera.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@arma_ligera.errors.count, "error") %> prohibited this arma_ligera from being saved:</h2>
+
+      <ul>
+      <% @arma_ligera.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :armamento %><br>
+    <%= f.text_field :armamento %>
+  </div>
+  <div class="field">
+    <%= f.label :alcance_efectivo %><br>
+    <%= f.number_field :alcance_efectivo %>
+  </div>
+  <div class="field">
+    <%= f.label :alcance_max %><br>
+    <%= f.number_field :alcance_max %>
+  </div>
+  <div class="field">
+    <%= f.label :cadencia %><br>
+    <%= f.text_field :cadencia %>
+  </div>
+  <div class="field">
+    <%= f.label :sistema_disparo %><br>
+    <%= f.text_field :sistema_disparo %>
+  </div>
+  <div class="field">
+    <%= f.label :cargador %><br>
+    <%= f.text_field :cargador %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

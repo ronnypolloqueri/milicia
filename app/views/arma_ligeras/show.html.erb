@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Armamento:</strong>
+  <%= @arma_ligera.armamento %>
+</p>
+
+<p>
+  <strong>Alcance efectivo:</strong>
+  <%= @arma_ligera.alcance_efectivo %>
+</p>
+
+<p>
+  <strong>Alcance max:</strong>
+  <%= @arma_ligera.alcance_max %>
+</p>
+
+<p>
+  <strong>Cadencia:</strong>
+  <%= @arma_ligera.cadencia %>
+</p>
+
+<p>
+  <strong>Sistema disparo:</strong>
+  <%= @arma_ligera.sistema_disparo %>
+</p>
+
+<p>
+  <strong>Cargador:</strong>
+  <%= @arma_ligera.cargador %>
+</p>
+
+<%= link_to 'Edit', edit_arma_ligera_path(@arma_ligera) %> |
+<%= link_to 'Back', arma_ligeras_path %>

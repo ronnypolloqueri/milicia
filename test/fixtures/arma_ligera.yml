@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  armamento_id: 
+  alcance_efectivo: 1
+  alcance_max: 1
+  cadencia: MyString
+  sistema_disparo: MyString
+  cargador: MyString
+
+two:
+  armamento_id: 
+  alcance_efectivo: 1
+  alcance_max: 1
+  cadencia: MyString
+  sistema_disparo: MyString
+  cargador: MyString

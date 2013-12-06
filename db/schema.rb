@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206084842) do
+ActiveRecord::Schema.define(version: 20131206095548) do
+
+  create_table "arma_ligera", force: true do |t|
+    t.integer  "armamento_id"
+    t.integer  "alcance_efectivo"
+    t.integer  "alcance_max"
+    t.string   "cadencia"
+    t.string   "sistema_disparo"
+    t.string   "cargador"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "arma_ligera", ["armamento_id"], name: "index_arma_ligera_on_armamento_id"
+
+  create_table "armamento", force: true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.integer  "peso"
+    t.integer  "longitud"
+    t.string   "municion"
+    t.integer  "pais_id"
+    t.integer  "tipo_armamento_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "armamento", ["pais_id"], name: "index_armamento_on_pais_id"
+  add_index "armamento", ["tipo_armamento_id"], name: "index_armamento_on_tipo_armamento_id"
 
   create_table "cuarteles", force: true do |t|
     t.integer  "distrito_id"
