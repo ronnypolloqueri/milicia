@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206095548) do
+ActiveRecord::Schema.define(version: 20131206204900) do
 
   create_table "arma_ligera", force: true do |t|
     t.integer  "armamento_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20131206095548) do
     t.integer  "tipo_armamento_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "imagen_url"
   end
 
   add_index "armamento", ["pais_id"], name: "index_armamento_on_pais_id"

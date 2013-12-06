@@ -1,0 +1,30 @@
+<h1>Armas Ligeras</h1>
+
+<!-- <table  class="table table-striped"> -->
+    <div class="row">
+      <div class="col-xs-3 col-md-2">Imagen</div>
+      <div class="col-xs-3 col-md-2">Nombre</div>
+      <div class="col-xs-3 col-md-4">Descripción</div>
+      <div class="col-xs-3 col-md-2">Tipo</div>
+      <div class="col-xs-3 col-md-2"></div>
+      <div class="col-xs-2 col-md-1"></div>
+      <div class="col-xs-2 col-md-1"></div>
+    </div>
+
+  <!-- <tbody> -->
+    <% @arma_ligera.each do |arma_ligera| %>
+      <div class="row">
+        <div class="col-xs-3 col-md-2"><%= image_tag "armas_ligeras/"+arma_ligera.armamento.imagen_url, alt: arma_ligera.armamento.imagen_url, class: "img-responsive img-thumbnail" %></div>
+        <div class="col-xs-3 col-md-2"><%= link_to arma_ligera.armamento.nombre, arma_ligera %></div>
+        <div class="col-xs-3 col-md-4"><%= truncate(arma_ligera.armamento.descripcion, length: 75 )%></div>
+        <div class="col-xs-3 col-md-2"><%= arma_ligera.armamento.tipo_armamento.nombre %></div>
+        <div class="col-xs-2 col-md-1"><%= link_to 'Edit', edit_arma_ligera_path(arma_ligera) %></div>
+        <div class="col-xs-2 col-md-1"><%= link_to 'Destroy', arma_ligera, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
+    <% end %>
+  <!-- </tbody> -->
+
+
+<br>
+
+<%= link_to 'New Arma ligera', new_arma_ligera_path %>

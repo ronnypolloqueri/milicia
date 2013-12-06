@@ -346,6 +346,17 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
+  width:100%;
+  /*Agregado por recomendacion de http://stackoverflow.com/questions/18846744/responsive-images-in-tables-bootstrap-3*/
+}
+
+/*Mi propia etiqueta*/
+.video-responsive {
+  display: block;
+  height: 400px;
+  max-width: 100%;
+  width:100%;
+  /*Agregado por recomendacion de http://stackoverflow.com/questions/18846744/responsive-images-in-tables-bootstrap-3*/
 }
 
 .img-rounded {
@@ -7096,3 +7107,4 @@ td.visible-print {
     display: none !important;
   }
 }
+

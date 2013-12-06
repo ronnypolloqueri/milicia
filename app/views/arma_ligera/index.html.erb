@@ -1,8 +1,9 @@
 <h1>Armas Ligeras</h1>
 
-<table>
+<table  class="table table-striped">
   <thead>
     <tr>
+      <th>Imagen</th>
       <th>Nombre</th>
       <th>Descripción</th>
       <th>Tipo</th>
@@ -15,8 +16,9 @@
   <tbody>
     <% @arma_ligera.each do |arma_ligera| %>
       <tr>
+        <td class="col-xs-3 col-md-2"><%= image_tag "armas_ligeras/"+arma_ligera.armamento.imagen_url, alt: arma_ligera.armamento.imagen_url, class: "img-responsive img-thumbnail" %></td>
         <td><%= link_to arma_ligera.armamento.nombre, arma_ligera %></td>
-        <td><%= truncate(arma_ligera.armamento.descripcion, length: 75 )%></td>
+        <td><%= truncate(arma_ligera.armamento.descripcion, length: 100 )%></td>
         <td><%= arma_ligera.armamento.tipo_armamento.nombre %></td>
         <td><%= link_to 'Edit', edit_arma_ligera_path(arma_ligera) %></td>
         <td><%= link_to 'Destroy', arma_ligera, method: :delete, data: { confirm: 'Are you sure?' } %></td>

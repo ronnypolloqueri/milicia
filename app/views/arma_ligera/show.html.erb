@@ -1,62 +1,81 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-7">
+    <p>
+      <strong>Nombre:</strong>
+      <h1><%= @arma_ligera.armamento.nombre %></h1>
+    </p>
+    <p>
+      <strong>Imagen:</strong>
+      <%= image_tag "armas_ligeras/"+@arma_ligera.armamento.imagen_url, alt: @arma_ligera.armamento.imagen_url, class: "img-responsive img-thumbnail"%>
+    </p>
+    <p>
+      <strong>Descripción:</strong>
+      <%= @arma_ligera.armamento.descripcion %>
+    </p>
+    <p>
+      <strong>Video:</strong>
+    <iframe class="video-responsive" src="//www.youtube.com/embed/L9apXjni7Mw" frameborder="0" allowfullscreen></iframe>
+    </p>
+  </div>
+  <div class="col-md-5 panel panel-primary">
+    <br/>
+    <br/>
+    <div class="panel-heading">Detalles</div>
+    <div class="panel-body">
+    <p>
+      <strong>Peso:</strong>
+      <%= @arma_ligera.armamento.peso %> gramos
+    </p>
+    <p>
+      <strong>Longitud:</strong>
+      <%= @arma_ligera.armamento.longitud %> mm
+    </p>
 
-<p>
-  <strong>Nombre:</strong>
-  <h1><%= @arma_ligera.armamento.nombre %></h1>
-</p>
-<p>
-  <strong>Descripción:</strong>
-  <%= @arma_ligera.armamento.descripcion %>
-</p>
-<p>
-  <strong>Peso:</strong>
-  <%= @arma_ligera.armamento.peso %> gramos
-</p>
-<p>
-  <strong>Longitud:</strong>
-  <%= @arma_ligera.armamento.longitud %> mm
-</p>
+    <p>
+      <strong>Munición:</strong>
+      <%= @arma_ligera.armamento.municion %>
+    </p>
 
-<p>
-  <strong>Munición:</strong>
-  <%= @arma_ligera.armamento.municion %>
-</p>
+    <p>
+      <strong>Pais:</strong>
+      <%= image_tag "paises/"+@arma_ligera.armamento.pais.imagen_url%>
+      <%= @arma_ligera.armamento.pais.nombre %>
+    </p>
 
-<p>
-  <strong>Tipo:</strong>
-  <%= @arma_ligera.armamento.pais.nombre %>
-</p>
+    <p>
+      <strong>Tipo:</strong>
+      <%= @arma_ligera.armamento.tipo_armamento.nombre %>
+    </p>
 
-<p>
-  <strong>Pais:</strong>
-  <%= @arma_ligera.armamento.tipo_armamento.nombre %>
-</p>
+    <!--  -->
+    <p>
+      <strong>Alcance efectivo:</strong>
+      <%= @arma_ligera.alcance_efectivo %> metros
+    </p>
 
-<!--  -->
-<p>
-  <strong>Alcance efectivo:</strong>
-  <%= @arma_ligera.alcance_efectivo %> metros
-</p>
+    <p>
+      <strong>Alcance max:</strong>
+      <%= @arma_ligera.alcance_max %> metros
+    </p>
 
-<p>
-  <strong>Alcance max:</strong>
-  <%= @arma_ligera.alcance_max %> metros
-</p>
+    <p>
+      <strong>Cadencia:</strong>
+      <%= @arma_ligera.cadencia %>
+    </p>
 
-<p>
-  <strong>Cadencia:</strong>
-  <%= @arma_ligera.cadencia %>
-</p>
+    <p>
+      <strong>Sistema disparo:</strong>
+      <%= @arma_ligera.sistema_disparo %>
+    </p>
 
-<p>
-  <strong>Sistema disparo:</strong>
-  <%= @arma_ligera.sistema_disparo %>
-</p>
+    <p>
+      <strong>Cargador:</strong>
+      <%= @arma_ligera.cargador %>
+    </p>
+    </div><!-- fin panel body -->
 
-<p>
-  <strong>Cargador:</strong>
-  <%= @arma_ligera.cargador %>
-</p>
-
+  </div>
+</div>
 <%= link_to 'Edit', edit_arma_ligera_path(@arma_ligera) %> |
 <%= link_to 'Back', arma_ligera_index_path %>
