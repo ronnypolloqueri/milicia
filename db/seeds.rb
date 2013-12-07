@@ -1450,3 +1450,11 @@ Alergia.create(nombre:'Alergia a los cereales')
 Alergia.create(nombre:'Alergia la níquel')
 Alergia.create(nombre:'Alergia al látex')
 Alergia.create(nombre:'Alergia al anisakis')
+
+num_personal = Personal.all.size
+num_alergias = Alergia.all.size
+alergicos = num_personal / 2
+
+alergicos.times do
+	Personal.find(rand(1..num_personal)).alergias << Alergia.find(rand(1..num_alergias))
+end

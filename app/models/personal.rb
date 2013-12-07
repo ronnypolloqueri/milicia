@@ -3,6 +3,8 @@ class Personal < ActiveRecord::Base
   belongs_to :unidad
   belongs_to :distrito
   belongs_to :cuartel
+  has_and_belongs_to_many :alergias, join_table: 'personal_alergia'
+
 
   def get_sexo
   	if sexo
