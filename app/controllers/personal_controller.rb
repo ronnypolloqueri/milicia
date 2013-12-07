@@ -21,6 +21,8 @@ class PersonalController < ApplicationController
 
     # @personal_ids = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
     @persona  = Personal.find(params[:id])
+    @alergias = @persona.alergias
+
   end
 
   # Ver orden

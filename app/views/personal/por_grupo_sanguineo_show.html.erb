@@ -69,7 +69,17 @@
       <strong>Telefono:</strong>
       <%= @persona.telefono %>
     </p>
-
+  <!-- Alergias del personal -->
+  <hr/>
+  <h4>Alergias:</h4>
+  <% unless @alergias.size == 0 %>
+    <% @alergias.each do |alergia| %>
+      <%= alergia.nombre %>
+    <% end %>
+  <% else %>
+    <%= "Ninguna conocida." %>
+  <% end %>
+  <!-- Fin Alergias del personal -->
   </div>
   <div class="col-md-4">
 
