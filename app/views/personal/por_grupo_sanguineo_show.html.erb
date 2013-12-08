@@ -1,10 +1,8 @@
-<%= @array.inspect %>
-<%= @array.class%>
+<% #@array.inspect %>
+<div class="text-center">
+<%= "Registro #{@array.index((params[:id].to_i))+1} de #{ @array.size }" %>
+</div>
 <p id="notice"><%= notice %></p>
-<p>
-<%= link_to 'Anterior' , por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal_before(@array, params[:id]) )%>
-<%= link_to 'Siguiente' ,  por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal_next(@array, params[:id]) )%>
-</p>
 <div class="row">
   <div class="col-md-offset-1">
   <p>
@@ -14,7 +12,10 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-1">
+  <div class="col-md-1">
+    <%= link_to 'Anterior' , por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal_before(@array, params[:id]) )%>
+  </div>
+  <div class="col-md-4">
     <p>
       <strong>Nro carnet militar:</strong>
       <%= @persona.nro_carnet_militar %>
@@ -69,22 +70,23 @@
       <strong>Telefono:</strong>
       <%= @persona.telefono %>
     </p>
-  <!-- Alergias del personal -->
-  <hr/>
-  <h4>Alergias:</h4>
-  <% unless @alergias.size == 0 %>
-    <% @alergias.each do |alergia| %>
-      <%= alergia.nombre %>
+    <!-- Alergias del personal -->
+    <hr/>
+    <h4>Alergias:</h4>
+    <% unless @alergias.size == 0 %>
+      <% @alergias.each do |alergia| %>
+        <%= alergia.nombre %>
+      <% end %>
+    <% else %>
+      <%= "Ninguna conocida." %>
     <% end %>
-  <% else %>
-    <%= "Ninguna conocida." %>
-  <% end %>
-  <!-- Fin Alergias del personal -->
+    <!-- Fin Alergias del personal -->
   </div>
   <div class="col-md-4">
 
-<!-- http://placehold.it/300x280.gif -->
-    <img src="/assets/300x280.gif">
+    <!-- http://placehold.it/300x280.gif -->
+    <img  class="img-responsive" src="/assets/300x280.gif">
+
     <hr/>
     <p>
       <strong>Color cabello:</strong>
@@ -105,6 +107,11 @@
       <%= @persona.peso %>
     </p>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-1">
+    <img class="img-responsive" src="<%="/assets/huellas_digitales/#{params[:id]}.jpeg" %>" >
   </div>
+  <div class="col-md-1 col-xs-1">
+    <%= link_to 'Siguiente' ,  por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal_next(@array, params[:id]) )%>
+  </div>
+
 </div>
