@@ -369,25 +369,40 @@ Distrito.create(nombre:'TARUCACHI', provincia_id: 187)
 Distrito.create(nombre:'TICACO', provincia_id: 187)
 
 # ==================  	REGISTRO DE CURSOS =========================
+Curso.create(nombre:'Curso Regular de Comandos', descripcion:'La Escuela de Comandos del Ejercito FORMA COMBATIENTES SELECTOS, CON TEMPLE DE ACERO Y ENTREGA AL SERVICIO DE NUESTRA COMUNIDAD. SON SOLDADOS CAPACES DE AFRONTAR SITUACIONES REALES, EVOCADOS Y COMPROMETIDOS AL ENGRANDECIMIENTO DE NUESTRO PAÍS. EN SU VOCABULARIO LA PALABRA "RENDICIÓN" FUE RETIRADA, Y SU MISIÓN ES SEÑALAR EL CAMINO A LA VICTORIA.', fecha_inicio:'2013-03-04', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso Regular de Anfibios', descripcion:'Formar Oficiales, Tecnicos y Sub Oficiales, como expertos combatientes Anfibios, en el dominio maritimo, terrestre; tanto en costa, sierra y selva, para el cuidado de la soberania de nuestra patria el Perú.', fecha_inicio:'2013-03-04', duracion:'6 meses', lugar: nil)
+Curso.create(nombre:'Curso Maestro de Equitación', descripcion:'Formacion de Oficiales Maestros de Equitacion.
+Encargada de la Organizacion y Preparacion del Equipo Hipico Militar.
+Formacion de Jinetes y Amazonas en la Escuela del Apoyo Hipico Militar.', fecha_inicio:'2013-04-15', duracion:'3 meses', lugar: 'Av. La Universidad S/N, Cruce Calle 7, La Molina, Lima01 La Molina, Lima, Peru')
+Curso.create(nombre:'Curso de Artillería Antiaérea', descripcion:'La misión del Curso de Artillería es formar técnica, táctica y moralmente al futuro Oficial del Arma. Actualmente el ingreso al Curso de Artillería se logra mediante la aprobación del año de Joven Aspirante. Normalmente los 1º de marzo los Cadete de 1º Año eligen por orden de derecha el arma al cuál ellos desean pasar.
 
-Curso.create(nombre:'Curso Regular de Comandos')
-Curso.create(nombre:'Curso Regular de Anfibios')
-Curso.create(nombre:'Curso Maestro de Equitación')
-Curso.create(nombre:'Curso de Artillería Antiaérea')
-Curso.create(nombre:'Curso de Guerra Electrónica')
-Curso.create(nombre:'Curso de Paracaidismo Básico')
-Curso.create(nombre:'Curso de Maestro de Salto')
-Curso.create(nombre:'Curso de Caída Libre')
-Curso.create(nombre:'Curso de Saltos Operacionales')
-Curso.create(nombre:'Curso de Orientador')
-Curso.create(nombre:'Curso Básico de Blindados')
-Curso.create(nombre:'Curso Básico de Operaciones Psicológicas')
-Curso.create(nombre:'Curso Básico de Inteligencia')
-Curso.create(nombre:'Curso de Pilotaje')
-Curso.create(nombre:'Curso de Franco Tiradores')
-Curso.create(nombre:'Curso de Administración de Personal')
-Curso.create(nombre:'Curso de Administración Logística')
-Curso.create(nombre:'Diplomado en Ciencia y Tecnología')
+Instrucción Militar.
+
+Durante su pasaje por el Curso el Cadete recibe la Instrucción necesaria para su desempeño como Oficial de Dirección de Tiro, Comandante de la Línea de Fuego, Observador Avanzado y Oficial de Reconocimiento y Topografía.
+En materia profesional el Cadete recibe instrucción en las siguientes materias:
+
+Táctica de Artillería.
+Técnica de Artillería.
+Topografía aplicada a la Artillería.
+Armamento y Tiro.
+Ordenanzas.
+Instrucción Básica.', fecha_inicio:'2013-07-01', duracion:'6 meses', lugar: nil)
+Curso.create(nombre:'Curso de guerra Electrónica', descripcion:'Medidas de apoyo de Guerra Electrónica (ESM) Área de la EW que comprende las acciones adoptadas para buscar, interceptar, identificar o ubicar fuentes de energía electromagnética irradiada con el fin de obtener un reconocimiento inmediato de la amenaza. Así pues, las ESM suministran una fuente de información requerida para acción inmediata que incluye contramedidas electrónicas, anticontramedidas electrónicas, acciones de evasión, localización del blanco y otro empleo táctico de las fuerzas.', fecha_inicio:'2013-09-02', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso de Paracaidismo Básico', descripcion:'Este centro, creado el 15 de agosto de 1987, tiene como misión “la formación moral, física y técnica de los mandos y tropas de las unidades de Cazadores Paracaidistas”, aunque hoy en día imparte enseñanzas teórico-prácticas en materia de paracaidismo al personal profesional de todas las Fuerzas Armadas y de las Fuerzas y Cuerpos de Seguridad del Estado.', fecha_inicio:'2014-02-03', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso Maestro de Salto', descripcion:'El propósito del curso de instructor en esta área, es el de calificar al personal  en las labores propias del lanzamiento del personal . contribuye al incremento de las cualidades de liderazgo y de las habilidades físicas, psicológicas e intelectuales a través de la confianza, y entrenamiento especifico, haciéndolos desenvolverse eficazmente como maestro de salto', fecha_inicio:'2013-10-14', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso de Caída Libre', descripcion:'En el transcurso de este curso el alumno adquirirá todos los conocimientos básicos necesarios para poder saltar por si mismo con total seguridad, aprendiendo a controlar la caída libre, abrir su paracaídas y manejo hasta su aterrizaje.', fecha_inicio:'2014-03-10', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso de Saltos Operacionales', descripcion:'Esta curso fue creado con el objetivo de preservar y desarrollar el máximo potencial psicofísico de todo el Personal relacionado directamente con las actividades aéreas como son los saltos operacionales en la Institución y fuera de ella.', fecha_inicio:'2013-10-14', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso Básico de Blindados', descripcion:'Creada con la finalidad que nuestro Ejército cuente con personal de oficiales altamente calificados, se encuentra abocada a capacitarse cada día más para estar en condiciones de asimilar los nuevos equipos y tecnologías que nuestro Ejército adquirirá en un futuro próximo y continuar siendo un elemento altamente disuasivo en la defensa del Perú.', fecha_inicio:'2013-07-01', duracion:'6 meses', lugar: nil)
+Curso.create(nombre:'Curso Básico de Operaciones Psicológicas', descripcion:'Objetivo del curso: Las operaciones psicológicas son un verdadero multiplicador del combate y que en combinación con otros activos, aumentará la eficacia de la operación conjunta de un ejército en un conflicto o en una operación determinada. La misión de las tácticas psicológicas es la de proporcionar al comandante la maniobra de apoyo, suficiente y eficaz con el fin de comunicarse directamente con el elemento humano en el campo de batalla.
+Dirigido a: Ideal para militares en activo, reservistas, periodistas, académicos, estudiantes o investigadores que deseen aplicar sus conocimientos de las fuerzas armadas con propiedad y acierto.', fecha_inicio:'2013-09-02', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso Básico de Inteligencia', descripcion:'El Programa Básico Inteligencia para Oficiales de Otras Armas tiene por objetivo capacitar Oficiales Subalternos para desempeñar funciones de Inteligencia y Contrainteligencia en los niveles de UU y GGUU, planear, conducir y controlar las Operaciones Especiales de Inteligencia y Contrainteligencia con orden y de acuerdo a la Ley No 28664 Ley del SINA.', fecha_inicio:'2014-02-03', duracion:'6 meses', lugar: nil)
+Curso.create(nombre:'Curso de Pilotaje', descripcion:'Este curso fue creado con el proposito de que nuestro ejercito cuente con personal capacitado para realizar vuelos de seguridad, instrumental básico, radioinstrumentos, precisión, formación, nocturno, navegación y armas, además de haber tenido el aporte académico teórico y practivo en simuladores de vuelo.', fecha_inicio:'2013-04-15', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso de Francotiradores', descripcion:'La finalidad de este curso es desarrollar un programa puramente táctico de formación para el francotirador en situación, eso quiere decir que el curso no solamente sirve para aprender a tirar a larga distancia, sino a hacerlo en múltiples situaciones, posiciones, con estrés, de noche, con barro hasta las cejas… de modo que el tirador reciba un curso que se adapta a situaciones reales. Exactamente igual a los cursos de tirador selecto para los miembros de los grupos de operaciones especiales más exclusivos del Ejército', fecha_inicio:'2013-04-15', duracion:'3 meses', lugar: nil)
+Curso.create(nombre:'Curso de Administración de Personal', descripcion:'El objetivo de este curso será conocer las principales tareas que se desarrollan dentro del área Administración de Personal, adquiriendo las herramientas necesarias para llevar a adelante la función en distintos tipos de operaciones. Desarrollando los temas de: - Administración de los recursos humanos. Concepto, actividades, objetivos, funciones.
+-Administración de recursos humanos en la práctica.
+-Manejo de personal: reclutamiento, selección, supervisión, motivación, estímulos, retención y egreso.', fecha_inicio:'2014-03-10', duracion:'6 meses', lugar: nil)
+Curso.create(nombre:'Curso de Administración Logística', descripcion:'Se ha diseñado el Curso en Administración Logística con la finalidad de maximizar el uso de los recursos y optimizar el arte práctica de mover los ejércitos, los pormenores materiales de las marchas y formaciones y el establecimiento de los campamentos y acantonamientos sin atrincherar, en una palabra la ejecución de las combinaciones de la estrategia y la táctica sublime', fecha_inicio:'2014-02-03', duracion:'3 meses', lugar: nil)
+
 
 # ==================  	REGISTRO DE GRAN UNIDAD =========================
 

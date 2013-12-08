@@ -7,6 +7,16 @@ class CursosController < ApplicationController
     @cursos = Curso.all
   end
 
+  def por_fecha_inicio
+    if(params[:mes])
+      @cursos = Curso.por_anio_y_mes(params[:anio],params[:mes])
+    else
+      @cursos = Curso.por_anio(params[:anio])
+    end
+    @anio_ini = Curso.primer_anio
+    @anio_fin = Curso.ultimo_anio
+  end
+
   # GET /cursos/1
   # GET /cursos/1.json
   def show

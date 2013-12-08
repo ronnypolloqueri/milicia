@@ -1,0 +1,17 @@
+<div class="btn-group btn-group-justified">
+	<% (@anio_ini..@anio_fin).each do |anio| %>
+		<%= link_to anio.to_s, cursos_por_fecha_inicio_path(anio), class: 'btn btn-default'  %>
+	<% end %>
+</div>
+<div class="btn-group btn-group-justified">
+	<% meses = %w(ene feb mar abr may jun jul ago sep oct nov dic) %>
+	<% meses.each do |mes| %>
+		<%= link_to mes, cursos_por_fecha_inicio_path(params[:anio], (meses.index(mes) + 1)) , class: 'btn btn-default'  %>
+	<% end %>
+</div>
+
+<ul>
+<% @cursos.each do |curso| %>
+	<li><%= link_to curso.nombre, curso%></li>
+<% end %>
+</ul>
