@@ -36,6 +36,14 @@
                   </ul>
                 </li>
                 <!-- Fin Armamento -->
+                <!-- Curso -->
+                <li class="dropdown">
+                  <a href="<%= cursos_path %>" class="dropdown-toggle" data-toggle="dropdown">Curso <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to 'Por fecha de inicio', cursos_por_fecha_inicio_path("#{Curso.primer_anio}") %></li>
+                  </ul>
+                </li>
+                <!-- Fin Curso -->
               </ul>
             </div>
           </div>
