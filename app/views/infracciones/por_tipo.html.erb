@@ -1,0 +1,21 @@
+
+<% unless params[:tipo_infraccion] %>
+	<h1>Por tipo de infracción</h1>
+	<ul>
+	<% @tipos_de_infracciones.each do |tipo_infraccion| %>
+		<% tipo_formateado = tipo_infraccion[0].gsub(/\//,'~').gsub(/ /,'_') %>
+		<li><%= link_to tipo_infraccion[0], controller: "infracciones", action: "por_tipo", tipo_infraccion: tipo_formateado %></li>
+	<% end %>
+	</ul>
+<% end %>
+
+<% if params[:tipo_infraccion] %>
+	<h3>Infracciones</h3>
+	<ul>
+		<% @infracciones.each do |infraccion| %>
+			<li><%= link_to infraccion.nombre, infraccion %></li>
+		<% end %>
+	</ul>
+	<%= link_to 'Volver', infracciones_por_tipo_path %>
+
+<% end %>

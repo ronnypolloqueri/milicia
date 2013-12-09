@@ -27,7 +27,14 @@
                 <li><%= link_to 'Grandes Unidades', gran_unidad_index_path  %></li>
                 <li><%= link_to 'Unidades', unidad_index_path  %></li>
                 <li><%= link_to 'Cuarteles', cuarteles_path %></li>
-                <li><%= link_to 'Infracciones', infracciones_path %></li>
+                <!-- Infracciones -->
+                <li class="dropdown">
+                  <a href="<%= arma_ligera_index_path %>" class="dropdown-toggle" data-toggle="dropdown">Infracciones <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to 'Por Tipo', infracciones_por_tipo_path %></li>
+                  </ul>
+                </li>
+                <!-- Fin Infracciones -->
                 <!-- Armamento -->
                 <li class="dropdown">
                   <a href="<%= arma_ligera_index_path %>" class="dropdown-toggle" data-toggle="dropdown">Armamento <b class="caret"></b></a>

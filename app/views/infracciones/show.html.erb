@@ -1,0 +1,14 @@
+<p>
+	<strong>Nombre:</strong>
+	<h3><%= @infraccion.nombre %></h3>
+</p>
+<p>
+	<strong>Tipo:</strong>
+	<%= @infraccion.tipo_infraccion %>
+</p>
+<p>
+	<strong>Gravedad:</strong>
+	<%= @infraccion.gravedad %>
+</p>
+
+<%= link_to 'Volver al Indice', infracciones_por_tipo_path %>

@@ -4,8 +4,8 @@ Milicia::Application.routes.draw do
 
   resources :arma_ligera
 
-  get "infracciones/index", as: :infracciones
-
+  get "infracciones/tipo(/:tipo_infraccion)" => 'infracciones#por_tipo', as: :infracciones_por_tipo
+  get "infracciones/:id" => 'infracciones#show', as: :infraccion
   resources :cuarteles
 
   resources :personal
