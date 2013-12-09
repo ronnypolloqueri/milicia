@@ -9,6 +9,7 @@ Milicia::Application.routes.draw do
   resources :cuarteles
 
   get 'personal/alergia(/:alergia)'=> 'personal#por_alergia', as: :por_alergia
+  get 'personal/unidades(/:unidad_id)' => 'personal#por_unidad', as: :por_unidad
 
   resources :personal
 

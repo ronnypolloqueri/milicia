@@ -1,0 +1,22 @@
+<% unless params[:unidad_id] %>
+	<h3>Por Unidades</h3>
+	<ul>
+	<% @unidades.each do |unidad| %>
+		<li> <%= link_to unidad.nombre, por_unidad_path(unidad) %> </li>
+	<% end %>
+	</ul>
+<% else %>
+
+	<h3>Personal en Unidad "<%= @unidad.nombre %>"</h3>
+	<% if @personal.size > 0 %>
+		<ul>
+		<% @personal.each do |persona| %>
+			<li> <%= link_to persona.apellidos+", "+persona.nombres, persona %> </li>
+		<% end %>
+		</ul>
+	<% else %>
+		<h5>No se encontraron registros</h5>
+	<% end %>
+	<%= link_to 'Volver al indice', por_alergia_path %>
+
+<% end %>

@@ -38,6 +38,13 @@ class PersonalController < ApplicationController
     @personal = @cuartel.personal
   end
 
+  def por_unidad
+    @unidades  = Unidad.select(:id, :nombre)
+    @unidad = Unidad.select(:id, :nombre).find(params[:unidad_id]) if params[:unidad_id]
+    # @personal = @unidad.personal
+    @personal = Personal.find_by_sql("SELECT p.nombres, p.apellidos FROM personal p WHERE unidad_id = #{@unidad.id}")  if params[:unidad_id]
+  end
+
   def por_apellidos
     # validar
     @personal = Personal.find_by_sql("SELECT * FROM personal WHERE apellidos LIKE '#{params[:inicial]}%'")
