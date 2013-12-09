@@ -8,6 +8,13 @@ class PersonalController < ApplicationController
     @personal = Personal.all
   end
 
+  def por_alergia
+    @indice_alergias = Alergia.select(:id, :nombre)
+    @personal = Personal.por_alergia(params[:alergia]) if params[:alergia]
+    @alergia = Alergia.find(params[:alergia]) if params[:alergia]
+  end
+
+
   def por_grupo_sanguineo
     @personal = Personal.where("grupo_sanguineo = ?", params[:grupo_sanguineo])
   end

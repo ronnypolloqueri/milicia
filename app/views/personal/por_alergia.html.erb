@@ -1,0 +1,23 @@
+<% unless params[:alergia] %>
+	<h3>Por alergia</h3>
+	<ul>
+	<% @indice_alergias.each do |alergia| %>
+		<li> <%= link_to alergia.nombre, por_alergia_path(alergia) %> </li>
+	<% end %>
+	</ul>
+<% else %>
+
+	<h3>Personal con alergia a <%= @alergia.nombre %></h3>
+	<% if @personal.size > 0 %>
+		<ul>
+		<% @personal.each do |persona| %>
+			<li> <%= link_to persona.apellidos+", "+persona.nombres, persona %> </li>
+		<% end %>
+		</ul>
+	<% else %>
+		<h5>No se encontraron registros</h5>
+	<% end %>
+	<%= link_to 'Volver al indice', por_alergia_path %>
+
+<% end %>
+
