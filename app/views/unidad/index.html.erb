@@ -1,6 +1,6 @@
-<h1>Unidades</h1>
+<h1>Indice de Unidades</h1>
 
-<table>
+<table class="table table-responsive table-striped">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -11,12 +11,12 @@
   </thead>
 
   <tbody>
-    <% @unidad.each do |unidad| %>
+    <% @unidades.each do |unidad| %>
       <tr>
-        <td><%= link_to unidad.nombre, unidad %></td>
-        <td><%= unidad.gran_unidad.nombre %></td>
-        <td><%= link_to 'Editar', edit_unidad_path(unidad) %></td>
-        <td><%= link_to 'Eliminar', unidad, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+        <td><%= link_to unidad[1], unidad_path(unidad[0]) %></td>
+        <td><%= unidad[2] %></td>
+        <td><%= link_to 'Editar', edit_unidad_path(unidad[0]) %></td>
+        <td><%= link_to 'Eliminar', unidad_path(unidad[0]), method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>

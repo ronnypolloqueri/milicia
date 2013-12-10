@@ -4,12 +4,24 @@ class UnidadController < ApplicationController
   # GET /unidad
   # GET /unidad.json
   def index
-    @unidad = Unidad.select(:id, :nombre, :gran_unidad_id).order(:nombre)
+    # @unidad = Unidad.select(:id, :nombre, :gran_unidad_id).order(:nombre)
+    @unidades = ActiveRecord::Base.connection.execute("SELECT u.id, u.nombre, gu.nombre FROM unidad u
+                                                  INNER JOIN gran_unidad gu ON u.gran_unidad_id = gu.id
+                                                  ORDER BY gu.nombre")
   end
 
   # GET /unidad/1
   # GET /unidad/1.json
   def show
+    # Se ordenaran alfabeticamente por orden de unidad
+    # @secuencia = Unidad.select(:id, :gran_unidad_id).order(:gran_unidad_id).ids
+    @array = ActiveRecord::Base.connection.execute("SELECT u.id FROM unidad u INNER JOIN gran_unidad gu ON u.gran_unidad_id = gu.id ORDER BY gu.nombre")
+    @secuencia = []
+    @array.each do |item|
+      @secuencia << item["id"]
+    end
+    @unidad = Unidad.find(params[:id])
+    @personal = @unidad.personal
   end
 
   # GET /unidad/new

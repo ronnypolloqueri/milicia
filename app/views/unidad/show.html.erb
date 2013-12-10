@@ -1,29 +1,65 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nombre:</strong>
-  <h1><%= @unidad.nombre %></h1>
+  <h3>
+  <div class="row">
+    <div class="col-md-2">
+    <%= link_to '<<Anterior', unidad_path( anterior(@secuencia, @unidad.id)) %>
+    </div>
+    <div class="col-md-8 text-center"><%= @unidad.nombre %></div>
+    <div class="col-md-2 text-right"><%= link_to 'Siguiente>>', unidad_path( siguiente(@secuencia, @unidad.id)) %></div>
+  </div>
+  </h3>
 </p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= raw @unidad.descripcion %>
-</p>
 
-<p>
-  <strong>Himno:</strong>
-  <%= raw @unidad.himno %>
-</p>
+<ul>
+  <li><a href="#lema">Lema</a> </li>
+  <li><a href="#himno">Himno</a> </li>
+  <li><a href="#personal">Personal</a> </li>
+</ul>
 
-<p>
-  <strong>Lema:</strong>
-  <%= @unidad.lema %>
-</p>
+<div class="panel panel-success">
+  <div class="panel-heading">Gran Unidad:</div>
+  <div class="panel-body">
+    <%= link_to @unidad.gran_unidad.nombre,  @unidad.gran_unidad %>
+  </div>
+</div>
 
-<p>
-  <strong>Gran unidad:</strong>
-  <%= link_to @unidad.gran_unidad.nombre, @unidad.gran_unidad %>
-</p>
+<div class="panel panel-success">
+  <div class="panel-heading">Descripción:</div>
+  <div class="panel-body">
+    <%= raw @unidad.descripcion %>
+  </div>
+</div>
+
+
+<div class="panel panel-success" id="lema">
+  <div class="panel-heading">Lema:</div>
+  <div class="panel-body">
+    <%= raw @unidad.lema %>
+  </div>
+</div>
+
+<div class="panel panel-success" id="himno">
+  <div class="panel-heading">Himno:</div>
+  <div class="panel-body">
+    <%= raw @unidad.himno %>
+  </div>
+</div>
+
+
+<div class="panel panel-success" id="personal">
+  <div class="panel-heading">Personal:</div>
+  <div class="panel-body">
+    <ul>
+      <% @personal.each do |personal| %>
+        <li><%= link_to personal.get_apellidos_nombres, personal %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 
 <%= link_to 'Edit', edit_unidad_path(@unidad) %> |
-<%= link_to 'Back', unidad_index_path %>
+<%= link_to 'Volver al Indice', unidad_index_path %>
