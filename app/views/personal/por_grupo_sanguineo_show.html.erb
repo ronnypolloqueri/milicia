@@ -1,119 +1,194 @@
-<% #@secuencia.inspect %>
-<div class="text-center">
-<%= "Registro #{@secuencia.index((params[:id].to_i))+1} de #{ @secuencia.size }" %>
-</div>
 <p id="notice"><%= notice %></p>
+<% #@secuencia.inspect %>
+<p>
+  <h4>
+  <div class="row">
+    <div class="col-md-2">
+    <%= link_to '<<Anterior', personal_path( anterior(@secuencia, @personal.id)) %>
+    </div>
+    <div class="col-md-8 text-center"><%= "Registro #{@secuencia.index((params[:id].to_i))+1} de #{ @secuencia.size }" %></div>
+    <div class="col-md-2 text-right"><%= link_to 'Siguiente>>', personal_path( siguiente(@secuencia, @personal.id)) %></div>
+  </div>
+  </h4>
+</p>
+
+
 <div class="row">
-  <div class="col-md-offset-1">
-  <p>
-    <h1><%= @persona.get_apellidos_nombres %></h1>
-  </p>
+  <div class="col-md-4">
+    <div class="panel panel-success">
+      <div class="panel-heading">Datos Importantes:</div>
+      <div class="panel-body">
+        <p>
+          <strong>Nombres:</strong>
+          <%= @personal.nombres %>
+        </p>
+        <p>
+          <strong>Apellidos:</strong>
+          <%= @personal.apellidos %>
+        </p>
+        <p>
+          <strong>Nro carnet militar:</strong>
+          <%= @personal.nro_carnet_militar %>
+        </p>
+
+        <p>
+          <strong>Cuartel:</strong>
+          <%= link_to @personal.cuartel.nombre, @personal.cuartel %>
+        </p>
+
+        <p>
+          <strong>Unidad:</strong>
+          <%= link_to @personal.unidad.nombre, @personal.unidad %>
+        </p>
+
+      </div>
+    </div>
+
+
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Datos Generales:</div>
+      <div class="panel-body">
+        <p>
+          <strong>Dni:</strong>
+          <%= @personal.dni %>
+        </p>
+        <p>
+          <strong>Fecha nacimiento:</strong>
+          <%= @personal.fecha_nacimiento %>
+        </p>
+
+        <p>
+          <strong>Distrito:</strong>
+          <%= @personal.distrito %>
+        </p>
+        <p>
+          <strong>Direccion:</strong>
+          <%= @personal.direccion %>
+        </p>
+
+        <p>
+          <strong>Telefono:</strong>
+          <%= @personal.telefono %>
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+          <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+          <li><a href="#foto" data-toggle="tab">Foto</a></li>
+          <li><a href="#huella_digital" data-toggle="tab">Huella Digital</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="foto">
+            <p>
+              <%= image_tag "/assets/300x280.gif", alt: @personal.get_apellidos_nombres, class: "img-responsive" %>
+            </p>
+          </div>
+          <div class="tab-pane" id="huella_digital">
+            <p>
+            <img class="img-responsive" src="<%="/assets/huellas_digitales/#{params[:id]}.jpeg" %>" >
+            </p>
+          </div>
+        </div>
+        <!-- End Tab panes -->
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-success">
+      <div class="panel-heading">Rasgos Físicos:</div>
+      <div class="panel-body">
+        <p>
+          <strong>Sexo:</strong>
+          <%= @personal.get_sexo %>
+        </p>
+        <p>
+          <strong>Color cabello:</strong>
+          <%= @personal.color_cabello %>
+        </p>
+        <p>
+          <strong>Color ojos:</strong>
+          <%= @personal.color_ojos %>
+        </p>
+
+        <p>
+          <strong>Talla:</strong>
+          <%= @personal.talla %>
+        </p>
+
+        <p>
+          <strong>Peso:</strong>
+          <%= @personal.peso %>
+        </p>
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Grupo Sanguineo:</div>
+      <div class="panel-body">
+        <p>
+          <strong>Grupo sanguineo:</strong>
+          <%= @personal.grupo_sanguineo %>
+        </p>
+
+        <p>
+          <strong>Factor RH:</strong>
+          <%= @personal.get_factor_rh %>
+        </p>
+      </div>
+    </div>
+
+    <div class="panel panel-success" id="himno">
+      <div class="panel-heading">Alergias:</div>
+      <div class="panel-body">
+        <!-- Alergias del personal -->
+        <% unless @alergias.size == 0 %>
+          <% @alergias.each do |alergia| %>
+            <%= alergia.nombre %>
+          <% end %>
+        <% else %>
+          <%= "Ninguna conocida." %>
+        <% end %>
+        <!-- Fin Alergias del personal -->
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+<div class="panel panel-success">
+  <div class="panel-heading">Cursos:</div>
+  <div class="panel-body">
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-1">
-    <%= link_to 'Anterior' , por_grupo_sanguineo_show_path(params[:grupo_sanguineo], anterior(@secuencia, params[:id]) )%>
+<div class="panel panel-success">
+  <div class="panel-heading">Infracciones:</div>
+  <div class="panel-body">
   </div>
-  <div class="col-md-4">
-    <p>
-      <strong>Nro carnet militar:</strong>
-      <%= @persona.nro_carnet_militar %>
-    </p>
-    <p>
-      <strong>Dni:</strong>
-      <%= @persona.dni %>
-    </p>
-
-    <hr/>
-
-    <p>
-      <strong>Cuartel:</strong>
-      <%= link_to @persona.cuartel.nombre, @persona.cuartel %>
-    </p>
-
-    <p>
-      <strong>Unidad:</strong>
-      <%= link_to @persona.unidad.nombre, @persona.unidad %>
-    </p>
-
-    <p>
-      <strong>Distrito:</strong>
-      <%= @persona.distrito %>
-    </p>
-
-     <hr/>
-    <p>
-      <strong>Fecha nacimiento:</strong>
-      <%= @persona.fecha_nacimiento %>
-    </p>
-
-    <p>
-      <strong>Sexo:</strong>
-      <%= @persona.get_sexo %>
-    </p>
-    <p>
-      <strong>Grupo sanguineo:</strong>
-      <%= @persona.grupo_sanguineo %>
-    </p>
-
-    <p>
-      <strong>Factor rh:</strong>
-      <%= @persona.get_factor_rh %>
-    </p>
-    <p>
-      <strong>Direccion:</strong>
-      <%= @persona.direccion %>
-    </p>
-
-    <p>
-      <strong>Telefono:</strong>
-      <%= @persona.telefono %>
-    </p>
-    <!-- Alergias del personal -->
-    <hr/>
-    <h4>Cursos:</h4>
-    <h4>Alergias:</h4>
-    <% unless @alergias.size == 0 %>
-      <% @alergias.each do |alergia| %>
-        <%= alergia.nombre %>
-      <% end %>
-    <% else %>
-      <%= "Ninguna conocida." %>
-    <% end %>
-    <h4>Infracciones:</h4>
-    <!-- Fin Alergias del personal -->
-  </div>
-  <div class="col-md-4">
-
-    <!-- http://placehold.it/300x280.gif -->
-    <img  class="img-responsive" src="/assets/300x280.gif">
-
-    <hr/>
-    <p>
-      <strong>Color cabello:</strong>
-      <%= @persona.color_cabello %>
-    </p>
-    <p>
-      <strong>Color ojos:</strong>
-      <%= @persona.color_ojos %>
-    </p>
-
-    <p>
-      <strong>Talla:</strong>
-      <%= @persona.talla %>
-    </p>
-
-    <p>
-      <strong>Peso:</strong>
-      <%= @persona.peso %>
-    </p>
-  </div>
-  <div class="col-md-1">
-    <img class="img-responsive" src="<%="/assets/huellas_digitales/#{params[:id]}.jpeg" %>" >
-  </div>
-  <div class="col-md-1 col-xs-1">
-    <%= link_to 'Siguiente' ,  por_grupo_sanguineo_show_path(params[:grupo_sanguineo], siguiente(@secuencia, params[:id]) )%>
-  </div>
-
 </div>
+
+
+<script type="text/javascript">
+  $('#foto a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+  $('#huella_digital a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
