@@ -4,13 +4,14 @@ class RegionMilitarController < ApplicationController
   # GET /region_militar
   # GET /region_militar.json
   def index
-    @region_militar = RegionMilitar.all
+    @region_militar = RegionMilitar.select(:id, :nombre).order(:nombre)
   end
 
   # GET /region_militar/1
   # GET /region_militar/1.json
   def show
     # @grandes_unidades = RegionMilitar.find(params[:id])gran_unidad
+    @secuencia = RegionMilitar.select(:id).order(:nombre).ids
     @grandes_unidades = @region_militar.gran_unidad
   end
 

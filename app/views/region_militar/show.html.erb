@@ -1,41 +1,49 @@
 <p id="notice"><%= notice %></p>
 <div id="inicio"></div>
 <p>
-  <strong>Nombre:</strong>
-  <h1><%= @region_militar.nombre %></h1>
+  <h3>
+  <div class="row">
+    <div class="col-md-2">
+    <%= link_to '<<Anterior', region_militar_path( anterior(@secuencia, @region_militar.id)) %>
+    </div>
+    <div class="col-md-8 text-center"><%= @region_militar.nombre %></div>
+    <div class="col-md-2 text-right"><%= link_to 'Siguiente>>', region_militar_path( siguiente(@secuencia, @region_militar.id)) %></div>
+  </div>
+  </h3>
 </p>
+
 <ul>
-	<li><a href="#himno">Himno</a> </li>
-	<li><a href="#grandes_unidades">Grandes Unidades</a> </li>
-	<!-- anterior(@region_militar) siguiente(@region_militar) -->
-	<li><%= link_to 'Anterior', "#"   %></li>
-	<li><%= link_to 'Siguiente', "#" %></li>
+  <li><a href="#himno">Himno</a> </li>
+  <li><a href="#grandes_unidades">Grandes Unidades</a> </li>
 </ul>
-<p>
-  <strong>Descripcion:</strong>
-  <%=raw @region_militar.descripcion %>
-</p>
 
-<div id="himno">
-<p>
-  <strong>Himno:</strong>
-  <%= raw @region_militar.himno %>
-</p>
-</div>
-<div>
-	<a href="#inicio">Regresar</a>
-</div>
-<div id="grandes_unidades">
-	<strong>Grandes Unidades:</strong>
-	<ul>
-		<% @grandes_unidades.each do |gran_unidad| %>
-			<li><%= link_to gran_unidad.nombre, gran_unidad %></li>
-		<% end %>
-	</ul>
-</div>
-<div>
-<a href="#inicio">Regresar</a>
+<div class="panel panel-success">
+  <div class="panel-heading">Descripción:</div>
+  <div class="panel-body">
+    <%= raw @region_militar.descripcion %>
+  </div>
 </div>
 
+
+<div class="panel panel-success" id="himno">
+  <div class="panel-heading">Himno:</div>
+  <div class="panel-body">
+    <%= raw @region_militar.himno %>
+  </div>
+</div>
+
+
+<div class="panel panel-success" id="personal">
+  <div class="panel-heading">Grandes Unidades:</div>
+  <div class="panel-body">
+    <ul>
+      <% @grandes_unidades.each do |gran_unidad| %>
+        <li><%= link_to gran_unidad.nombre, gran_unidad %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<%= link_to 'Arriba', '#inicio' %> |
 <%= link_to 'Edit', edit_region_militar_path(@region_militar) %> |
 <%= link_to 'Back', region_militar_index_path %>
