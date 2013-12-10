@@ -1,37 +1,74 @@
 <p id="notice"><%= notice %></p>
+
+<p id="inicio">
+  <h3>
+  <div class="row">
+    <div class="col-md-2">
+    <%= link_to '<<Anterior', cuartel_path( anterior(@secuencia, @cuartel.id)) %>
+    </div>
+    <div class="col-md-8 text-center"><%= @cuartel.nombre %></div>
+    <div class="col-md-2 text-right"><%= link_to 'Siguiente>>', cuartel_path( siguiente(@secuencia, @cuartel.id)) %></div>
+  </div>
+  </h3>
+</p>
+
+
+
 <ul>
-  <li><%= link_to 'Anterior', cuartel_path( anterior(@secuencia,  @cuartel.id) )%></li>
-  <li><%= link_to 'Siguiente', cuartel_path( siguiente(@secuencia,  @cuartel.id) ) %></li>
+  <li><a href="#lema">Lema</a> </li>
+  <li><a href="#himno">Himno</a> </li>
+  <li><a href="#personal">Personal</a> </li>
 </ul>
-<p>
-  <strong>Nombre:</strong>
-  <%= @cuartel.nombre %>
-</p>
 
-<p>
-  <strong>Distrito:</strong>
-  <%= @cuartel.distrito %>
-</p>
+<div class="panel panel-success">
+  <div class="panel-heading">Descripción:</div>
+  <div class="panel-body">
+    <%= raw @cuartel.descripcion %>
+  </div>
+</div>
 
-<p>
-  <strong>Localizacion:</strong>
-  <%= @cuartel.localizacion %>
-</p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= raw @cuartel.descripcion %>
-</p>
+<div class="panel panel-success" id="lema">
+  <div class="panel-heading">Lema:</div>
+  <div class="panel-body">
+    <%= raw @cuartel.lema %>
+  </div>
+</div>
 
-<p>
-  <strong>Himno:</strong>
-  <%= @cuartel.himno %>
-</p>
+<div class="panel panel-success" id="himno">
+  <div class="panel-heading">Himno:</div>
+  <div class="panel-body">
+    <%= raw @cuartel.himno %>
+  </div>
+</div>
 
-<p>
-  <strong>Lema:</strong>
-  <%= @cuartel.lema %>
-</p>
+
+<div class="panel panel-success" id="distrito">
+  <div class="panel-heading">Distrito:</div>
+  <div class="panel-body">
+    <%= raw @cuartel.distrito %>
+  </div>
+</div>
+
+<div class="panel panel-success" id="localizacion">
+  <div class="panel-heading">Localización:</div>
+  <div class="panel-body">
+    <%= raw @cuartel.localizacion %>
+  </div>
+</div>
+
+<div class="panel panel-success" id="personal">
+  <div class="panel-heading">Personal:</div>
+  <div class="panel-body">
+    <ul>
+      <% @personal.each do |personal| %>
+        <li><%= link_to personal.get_apellidos_nombres, personal %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 
 <%= link_to 'Edit', edit_cuartel_path(@cuartel) %> |
-<%= link_to 'Back', cuarteles_path %>
+<%= link_to 'Regresar al menu', '#inicio' %> |
+<%= link_to 'Volver a la Lista', cuarteles_path %>

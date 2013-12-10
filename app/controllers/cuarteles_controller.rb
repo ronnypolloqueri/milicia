@@ -13,6 +13,7 @@ class CuartelesController < ApplicationController
     # Se ordenaran alfabeticamente
     @secuencia = Cuartel.select(:id, :nombre).order(:nombre).ids
     @cuartel = Cuartel.find(params[:id])
+    @personal = @cuartel.personal
   end
 
   # GET /cuarteles/new
