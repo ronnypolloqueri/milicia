@@ -1,15 +1,26 @@
 class GranUnidadController < ApplicationController
-  before_action :set_gran_unidad, only: [:show, :edit, :update, :destroy]
+  before_action :set_gran_unidad, only: [:edit, :update, :destroy]
 
   # GET /gran_unidad
   # GET /gran_unidad.json
   def index
-    @gran_unidad = GranUnidad.all
+    # @gran_unidad = GranUnidad.select(:id, :nombre, :region_militar_id).order(:region_militar_id, :nombre)
+    @gran_unidad = ActiveRecord::Base.connection.execute("SELECT gu.id, gu.nombre, rm.nombre FROM gran_unidad gu
+                                                  INNER JOIN region_militar rm ON gu.region_militar_id = rm.id
+                                                  ORDER BY rm.nombre")
   end
 
   # GET /gran_unidad/1
   # GET /gran_unidad/1.json
   def show
+    # Se ordenaran alfabeticamente por orden de unidad
+    # @secuencia = GranUnidad.select(:id, :region_militar_id).order(:region_militar_id).ids
+    @array = ActiveRecord::Base.connection.execute("SELECT gu.id FROM gran_unidad gu INNER JOIN region_militar rm ON gu.region_militar_id = rm.id ORDER BY rm.nombre")
+    @secuencia = []
+    @array.each do |item|
+      @secuencia << item["id"]
+    end
+    @gran_unidad = GranUnidad.find(params[:id])
     @unidades = @gran_unidad.unidad
   end
 

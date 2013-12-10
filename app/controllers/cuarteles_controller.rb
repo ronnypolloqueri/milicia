@@ -1,15 +1,18 @@
 class CuartelesController < ApplicationController
-  before_action :set_cuartel, only: [:show, :edit, :update, :destroy]
+  before_action :set_cuartel, only: [:edit, :update, :destroy]
 
   # GET /cuarteles
   # GET /cuarteles.json
   def index
-    @cuarteles = Cuartel.all
+    @cuarteles = Cuartel.select(:id, :nombre).order(:nombre)
   end
 
   # GET /cuarteles/1
   # GET /cuarteles/1.json
   def show
+    # Se ordenaran alfabeticamente
+    @secuencia = Cuartel.select(:id, :nombre).order(:nombre).ids
+    @cuartel = Cuartel.find(params[:id])
   end
 
   # GET /cuarteles/new

@@ -4,7 +4,7 @@ class UnidadController < ApplicationController
   # GET /unidad
   # GET /unidad.json
   def index
-    @unidad = Unidad.all
+    @unidad = Unidad.select(:id, :nombre, :gran_unidad_id).order(:nombre)
   end
 
   # GET /unidad/1

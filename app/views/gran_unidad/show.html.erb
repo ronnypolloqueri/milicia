@@ -1,48 +1,68 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Nombre:</strong>
-  <h1><%= @gran_unidad.nombre %></h1>
+  <h3>
+  <div class="row">
+    <div class="col-md-2">
+    <%= link_to '<<Anterior', gran_unidad_path( anterior(@secuencia, @gran_unidad.id)) %>
+    </div>
+
+    <div class="col-md-8 text-center"><%= @gran_unidad.nombre %></div>
+    <div class="col-md-2 text-right"><%= link_to 'Siguiente>>', gran_unidad_path( siguiente(@secuencia, @gran_unidad.id)) %></div>
+  </div>
+  </h3>
 </p>
+
 
 <ul>
+  <li><a href="#himno">Lema</a> </li>
   <li><a href="#himno">Himno</a> </li>
-  <li><a href="#grandes_unidades">Grandes Unidades</a> </li>
-  <li><%= link_to 'Anterior', anterior(@gran_unidad) %></li>
-  <li><%= link_to 'Siguiente', siguiente(@gran_unidad) %></li>
+  <li><a href="#unidades">Unidades</a> </li>
 </ul>
 
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= raw @gran_unidad.descripcion %>
-</p>
-
-<p>
-  <strong>Himno:</strong>
-  <%= @gran_unidad.himno %>
-</p>
-
-<p>
-  <strong>Lema:</strong>
-  <%= @gran_unidad.lema %>
-</p>
-
-<p>
-  <strong>Region militar:</strong>
-  <%= link_to @gran_unidad.region_militar.nombre,  @gran_unidad.region_militar %>
-</p>
-
-<div id="unidades">
-  <strong>Grandes Unidades:</strong>
-  <ul>
-    <% @unidades.each do |unidad| %>
-      <li><%= link_to unidad.nombre, unidad %></li>
-    <% end %>
-  </ul>
+<div class="panel panel-success">
+  <div class="panel-heading">Región militar:</div>
+  <div class="panel-body">
+    <%= link_to @gran_unidad.region_militar.nombre,  @gran_unidad.region_militar %>
+  </div>
 </div>
-<div>
+
+<div class="panel panel-success">
+  <div class="panel-heading">Descripción:</div>
+  <div class="panel-body">
+    <%= raw @gran_unidad.descripcion %>
+  </div>
+</div>
+
+
+<div class="panel panel-success" id="lema">
+  <div class="panel-heading">Lema:</div>
+  <div class="panel-body">
+    <%= raw @gran_unidad.lema %>
+  </div>
+</div>
+
+<div class="panel panel-success" id="himno">
+  <div class="panel-heading">Himno:</div>
+  <div class="panel-body">
+    <%= raw @gran_unidad.himno %>
+  </div>
+</div>
+
+
+
+<div class="panel panel-success" id="unidades">
+  <div class="panel-heading">Unidades:</div>
+  <div class="panel-body">
+    <ul>
+      <% @unidades.each do |unidad| %>
+        <li><%= link_to unidad.nombre, unidad %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 <a href="#inicio">Regresar</a>
+<%= link_to 'Edit', edit_gran_unidad_path(@gran_unidad) %> |
+<%= link_to 'Volver al Indice', gran_unidad_index_path %>
 </div>
 
-<%= link_to 'Edit', edit_gran_unidad_path(@gran_unidad) %> |
-<%= link_to 'Back', gran_unidad_index_path %>

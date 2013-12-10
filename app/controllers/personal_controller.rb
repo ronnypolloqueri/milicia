@@ -21,10 +21,10 @@ class PersonalController < ApplicationController
 
   def por_grupo_sanguineo_show
     personal_gs = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
-    @array = []
-    personal_gs.each do |personal|
-      @array << personal.id
-    end
+    @secuencia = personal_gs.ids
+    # personal_gs.each do |personal|
+    #   @secuencia << personal.id
+    # end
 
     # @personal_ids = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
     @persona  = Personal.find(params[:id])

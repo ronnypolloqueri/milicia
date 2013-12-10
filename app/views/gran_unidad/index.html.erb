@@ -1,10 +1,10 @@
 <h1>Indice de Grandes Unidades</h1>
 
-<table>
+<table class="table table-responsive table-striped">
   <thead>
     <tr>
+      <th>Región militar</th>
       <th>Nombre</th>
-      <th>Region militar</th>
       <th></th>
       <th></th>
     </tr>
@@ -13,10 +13,10 @@
   <tbody>
     <% @gran_unidad.each do |gran_unidad| %>
       <tr>
-        <td><%= link_to gran_unidad.nombre, gran_unidad %></td>
-        <td><%= gran_unidad.region_militar.nombre %></td>
-        <td><%= link_to 'Editar', edit_gran_unidad_path(gran_unidad) %></td>
-        <td><%= link_to 'Eliminar', gran_unidad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= gran_unidad[2] %></td>
+        <td><%= link_to gran_unidad[1], gran_unidad_path(gran_unidad[0]) %></td>
+        <td><%= link_to 'Editar', edit_gran_unidad_path(gran_unidad[0]) %></td>
+        <td><%= link_to 'Eliminar', gran_unidad_path(gran_unidad[0]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

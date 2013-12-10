@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <ul>
-  <li><%= link_to 'Anterior', anterior(@cuartel) %></li>
-  <li><%= link_to 'Siguiente', siguiente(@cuartel) %></li>
-</ul>z
+  <li><%= link_to 'Anterior', cuartel_path( anterior(@secuencia,  @cuartel.id) )%></li>
+  <li><%= link_to 'Siguiente', cuartel_path( siguiente(@secuencia,  @cuartel.id) ) %></li>
+</ul>
 <p>
   <strong>Nombre:</strong>
   <%= @cuartel.nombre %>

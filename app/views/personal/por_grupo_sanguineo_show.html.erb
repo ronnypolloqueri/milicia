@@ -1,6 +1,6 @@
-<% #@array.inspect %>
+<% #@secuencia.inspect %>
 <div class="text-center">
-<%= "Registro #{@array.index((params[:id].to_i))+1} de #{ @array.size }" %>
+<%= "Registro #{@secuencia.index((params[:id].to_i))+1} de #{ @secuencia.size }" %>
 </div>
 <p id="notice"><%= notice %></p>
 <div class="row">
@@ -13,7 +13,7 @@
 
 <div class="row">
   <div class="col-md-1">
-    <%= link_to 'Anterior' , por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal_before(@array, params[:id]) )%>
+    <%= link_to 'Anterior' , por_grupo_sanguineo_show_path(params[:grupo_sanguineo], anterior(@secuencia, params[:id]) )%>
   </div>
   <div class="col-md-4">
     <p>
@@ -72,6 +72,7 @@
     </p>
     <!-- Alergias del personal -->
     <hr/>
+    <h4>Cursos:</h4>
     <h4>Alergias:</h4>
     <% unless @alergias.size == 0 %>
       <% @alergias.each do |alergia| %>
@@ -80,6 +81,7 @@
     <% else %>
       <%= "Ninguna conocida." %>
     <% end %>
+    <h4>Infracciones:</h4>
     <!-- Fin Alergias del personal -->
   </div>
   <div class="col-md-4">
@@ -111,7 +113,7 @@
     <img class="img-responsive" src="<%="/assets/huellas_digitales/#{params[:id]}.jpeg" %>" >
   </div>
   <div class="col-md-1 col-xs-1">
-    <%= link_to 'Siguiente' ,  por_grupo_sanguineo_show_path(params[:grupo_sanguineo], personal_next(@array, params[:id]) )%>
+    <%= link_to 'Siguiente' ,  por_grupo_sanguineo_show_path(params[:grupo_sanguineo], siguiente(@secuencia, params[:id]) )%>
   </div>
 
 </div>
