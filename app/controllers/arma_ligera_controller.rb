@@ -4,12 +4,18 @@ class ArmaLigeraController < ApplicationController
   # GET /arma_ligera
   # GET /arma_ligera.json
   def index
-    @arma_ligera = ArmaLigera.all
+    #TODO Escribir el codigo en sql
+    @arma_ligera = ArmaLigera.joins(:armamento).select('arma_ligera.id', 'descripcion', 'armamento_id', 'armamento.nombre', 'armamento.imagen_url').order('armamento.nombre')
   end
 
   # GET /arma_ligera/1
   # GET /arma_ligera/1.json
   def show
+    @secuencia = []
+    @armas_ordenadas =  ArmaLigera.joins(:armamento).order('armamento.nombre')
+    @armas_ordenadas.each do |arma|
+      @secuencia << arma.id
+    end
   end
 
   # GET /arma_ligera/new
