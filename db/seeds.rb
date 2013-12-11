@@ -1207,10 +1207,10 @@ RCB -3, invencibles
 Viva el Perú, Viva', gran_unidad_id:4)
 
 # ==================  	REGISTROS DE TIPO DE GRADO =========================
-Grado.create(denominacion: "Soldado")
-Grado.create(denominacion: "Cabo")
-Grado.create(denominacion: "Sargento Segundo")
-Grado.create(denominacion: "Sargento Primera")
+Grado.create(nombre: "Soldado")
+Grado.create(nombre: "Cabo")
+Grado.create(nombre: "Sargento Segundo")
+Grado.create(nombre: "Sargento Primera")
 # ==================  	REGISTROS DE TIPO DE CUARTEL =========================
 Cuartel.create(nombre:'Cuartel General del Ejército',  localizacion:'distrito de San Borja (Lima)')
 Cuartel.create(nombre:'Cuartel 24 de Julio',  localizacion:'Tumbes')
