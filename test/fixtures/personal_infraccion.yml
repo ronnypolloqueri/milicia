@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  personal_id: 
+  infraccion_id: 
+  fecha_infraccion: 2013-12-10
+  fecha_sancion: 2013-12-10
+  duracion_sancion: MyString
+
+two:
+  personal_id: 
+  infraccion_id: 
+  fecha_infraccion: 2013-12-10
+  fecha_sancion: 2013-12-10
+  duracion_sancion: MyString

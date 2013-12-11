@@ -11,7 +11,7 @@
 	<% if @personal.size > 0 %>
 		<ul>
 		<% @personal.each do |persona| %>
-			<li> <%= link_to persona.apellidos+", "+persona.nombres, persona %> </li>
+			<li> <%= link_to persona.apellidos+", "+persona.nombres, por_unidad_show_path(params[:unidad_id], persona.id) %> </li>
 		<% end %>
 		</ul>
 	<% else %>

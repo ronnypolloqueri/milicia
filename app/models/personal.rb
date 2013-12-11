@@ -4,6 +4,7 @@ class Personal < ActiveRecord::Base
   belongs_to :distrito
   belongs_to :cuartel
   has_and_belongs_to_many :alergias, join_table: 'personal_alergia'
+  has_and_belongs_to_many :infracciones, join_table: 'personal_infraccion'
 
   def self.por_alergia(alergia_id)
     # Alergia.find(alergia_id).personal

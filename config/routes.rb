@@ -9,7 +9,10 @@ Milicia::Application.routes.draw do
   resources :cuarteles
 
   get 'personal/alergia(/:alergia)'=> 'personal#por_alergia', as: :por_alergia
+  get 'personal/alergia/:alergia/:id'=> 'personal#por_alergia_show', as: :por_alergia_show
+
   get 'personal/unidades(/:unidad_id)' => 'personal#por_unidad', as: :por_unidad
+  get 'personal/unidades/:unidad_id/:id' => 'personal#por_unidad_show', as: :por_unidad_show
 
   resources :personal
 
@@ -30,11 +33,13 @@ Milicia::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get 'cuarteles/:cuartel_id/personal/' => 'personal#por_cuartel', as: :por_cuartel
+  get 'cuarteles/:cuartel_id/personal/:id' => 'personal#por_cuartel_show', as: :por_cuartel_show
 
   get 'personal/grupo_sanguineo/:grupo_sanguineo' => 'personal#por_grupo_sanguineo', as: :por_grupo_sanguineo
   get 'personal/grupo_sanguineo/:grupo_sanguineo/:id' => 'personal#por_grupo_sanguineo_show', as: :por_grupo_sanguineo_show
 
   get 'personal/apellidos/:inicial' => 'personal#por_apellidos', as: :por_apellidos
+  get 'personal/apellidos/:inicial/:id' => 'personal#por_apellidos_show', as: :por_apellidos_show
 
   # et 'personal/grupo_sanguineo' => 'personal#grupo_sanguineo', as: :grupo_sanguineo
   # Example of named route that can be invoked with purchase_url(id: product.id)

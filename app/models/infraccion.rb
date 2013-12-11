@@ -1,5 +1,5 @@
 class Infraccion < ActiveRecord::Base
-
+	has_and_belongs_to_many :personal, join_table: 'personal_infraccion'
 	def self.tipos
 		ActiveRecord::Base.connection.execute("SELECT DISTINCT tipo_infraccion FROM infracciones")
 		# Infraccion.find_by_sql("SELECT DISTINCT tipo_infraccion FROM infracciones")

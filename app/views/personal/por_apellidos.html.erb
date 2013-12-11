@@ -22,7 +22,7 @@
   <tbody>
     <% @personal.each do |personal| %>
       <tr>
-        <td><%= link_to personal.get_apellidos_nombres , personal%></td>
+        <td><%= link_to personal.get_apellidos_nombres , por_apellidos_show_path(params[:inicial], personal.id) %></td>
         <td><%= personal.nro_carnet_militar %></td>
         <td><%= personal.unidad.nombre %></td>
         <td><%= personal.cuartel.nombre %></td>

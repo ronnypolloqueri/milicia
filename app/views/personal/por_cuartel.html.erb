@@ -2,9 +2,13 @@
 
 <hr/>
 <div class="btn-group btn-group-justified">
-  <%= link_to "<< " + anterior(@cuartel).nombre, por_cuartel_path(anterior(@cuartel)), class: 'btn btn-default' %>
+  <%= link_to "<< " + Cuartel.find(anterior(@secuencia, @cuartel.id)).nombre,
+                              por_cuartel_path(anterior(@secuencia, @cuartel.id)), class: 'btn btn-default' %>
+
   <%= link_to @cuartel.nombre, por_cuartel_path(@cuartel.id), class: 'btn btn-default' %>
-  <%= link_to siguiente(@cuartel).nombre + " >>", por_cuartel_path(siguiente(@cuartel)), class: 'btn btn-default' %>
+
+  <%= link_to Cuartel.find(siguiente(@secuencia, @cuartel.id)).nombre + " >>",
+                              por_cuartel_path(siguiente(@secuencia, @cuartel.id)), class: 'btn btn-default' %>
 </div>
 
 <table class="table table-responsive table-striped">
@@ -20,7 +24,7 @@
   <tbody>
     <% @personal.each do |personal| %>
       <tr>
-        <td><%= link_to personal.get_apellidos_nombres , personal%></td>
+        <td><%= link_to personal.get_apellidos_nombres , por_cuartel_show_path( @cuartel.id,personal.id)%></td>
         <td><%= personal.nro_carnet_militar %></td>
         <td><%= personal.unidad.nombre %></td>
         <td><%= personal.cuartel.nombre %></td>

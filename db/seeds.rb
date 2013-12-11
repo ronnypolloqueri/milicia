@@ -1443,7 +1443,7 @@ ArmaLigera.create(armamento_id:16,alcance_efectivo:1000,alcance_max:1100,cadenci
 ArmaLigera.create(armamento_id:17,alcance_efectivo:1000,alcance_max:1100,cadencia:'650 disparos/minuto',sistema_disparo:'Recarga accionada por gas, cerrojo rotativo',cargador:'Alimentada por cintas de 200 balas')
 ArmaLigera.create(armamento_id:18,alcance_efectivo:150,alcance_max:400,cadencia:'5-7 disparos/minuto',sistema_disparo:'Manual',cargador:'Único disparo')
 
-# ==================  	REGISTROS DE ARMALIGERA =========================
+# ==================  	REGISTROS DE ALERGIAS =========================
 
 Alergia.create(nombre:'Alergia a los antibióticos')
 Alergia.create(nombre:'Alergia a los antiinflamatorios')
@@ -1466,10 +1466,46 @@ Alergia.create(nombre:'Alergia la níquel')
 Alergia.create(nombre:'Alergia al látex')
 Alergia.create(nombre:'Alergia al anisakis')
 
+# ==================  	REGISTROS DE PERSONAL_ALERGIA =========================
 num_personal = Personal.all.size
 num_alergias = Alergia.all.size
-alergicos = num_personal / 2
+alergicos = (num_personal * 0.5).to_i
 
 alergicos.times do
 	Personal.find(rand(1..num_personal)).alergias << Alergia.find(rand(1..num_alergias))
+end
+
+# ==================  	REGISTROS DE PERSONAL_INFRACCION =========================
+num_infracciones = Infraccion.all.size
+infractores = (num_personal * 0.75).to_i
+
+hoy = Time.now
+
+infractores.times do
+
+	infraccion = PersonalInfraccion.new
+	infraccion.personal_id = rand(1..num_personal)
+	infraccion.infraccion_id = rand(1..num_infracciones)
+	dias_atras = rand(1..400)
+	infraccion.fecha_infraccion = hoy.days_ago(dias_atras)
+	#TODO Perfeccionar el generador de infracciones dependiendo de la gravedad
+	# Demora mas dependiendo de la gravedad, pero lo usual son de 1 a 2 dias
+	# Si la fecha es anterior a 50 dias existe una fecha de sancion, que se
+	#   da en un intervalo de 40 dias
+	# sino, pero esta entre 50 y 10 antes el intervalo sera de 10 dias
+	# si no cumple ninguno de los casos, la fecha de sancion queda PENDIENTE
+	if dias_atras >= 50
+		infraccion.fecha_sancion = hoy.days_ago(dias_atras - rand(1..40))
+	elsif dias_atras < 50 and dias_atras >= 10
+		infraccion.fecha_sancion = hoy.days_ago(dias_atras - rand(1..10))
+	end
+
+	# La duracion_de_sancion solo existe en caso haya habido una fecha de sancion
+	#  por lo tanto solo hay duración si la infraccion es anterior a 10 dias
+	if dias_atras > 10
+		infraccion.duracion_sancion = rand(3..30)
+	end
+	# Guardamos el registro
+	infraccion.save
+
 end
