@@ -1,5 +1,7 @@
 Milicia::Application.routes.draw do
 
+  resources :vehiculos
+
   get "cursos/fecha_inicio/:anio(/:mes)" => 'cursos#por_fecha_inicio', as: :cursos_por_fecha_inicio
 
   resources :arma_ligera

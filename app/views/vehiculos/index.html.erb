@@ -1,0 +1,55 @@
+<h1>Listing vehiculos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Peso</th>
+      <th>Longitud</th>
+      <th>Anchura</th>
+      <th>Altura</th>
+      <th>Motor</th>
+      <th>Velocidad max</th>
+      <th>Capacidad combustible</th>
+      <th>Autonomia km</th>
+      <th>Rodaje</th>
+      <th>Suspension</th>
+      <th>Otros</th>
+      <th>Pais</th>
+      <th>Tipo vehiculo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehiculos.each do |vehiculo| %>
+      <tr>
+        <td><%= vehiculo.nombre %></td>
+        <td><%= vehiculo.descripcion %></td>
+        <td><%= vehiculo.peso %></td>
+        <td><%= vehiculo.longitud %></td>
+        <td><%= vehiculo.anchura %></td>
+        <td><%= vehiculo.altura %></td>
+        <td><%= vehiculo.motor %></td>
+        <td><%= vehiculo.velocidad_max %></td>
+        <td><%= vehiculo.capacidad_combustible %></td>
+        <td><%= vehiculo.autonomia_km %></td>
+        <td><%= vehiculo.rodaje %></td>
+        <td><%= vehiculo.suspension %></td>
+        <td><%= vehiculo.otros %></td>
+        <td><%= vehiculo.pais %></td>
+        <td><%= vehiculo.tipo_vehiculo %></td>
+        <td><%= link_to 'Show', vehiculo %></td>
+        <td><%= link_to 'Edit', edit_vehiculo_path(vehiculo) %></td>
+        <td><%= link_to 'Destroy', vehiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehiculo', new_vehiculo_path %>

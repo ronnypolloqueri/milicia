@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @vehiculo.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @vehiculo.descripcion %>
+</p>
+
+<p>
+  <strong>Peso:</strong>
+  <%= @vehiculo.peso %>
+</p>
+
+<p>
+  <strong>Longitud:</strong>
+  <%= @vehiculo.longitud %>
+</p>
+
+<p>
+  <strong>Anchura:</strong>
+  <%= @vehiculo.anchura %>
+</p>
+
+<p>
+  <strong>Altura:</strong>
+  <%= @vehiculo.altura %>
+</p>
+
+<p>
+  <strong>Motor:</strong>
+  <%= @vehiculo.motor %>
+</p>
+
+<p>
+  <strong>Velocidad max:</strong>
+  <%= @vehiculo.velocidad_max %>
+</p>
+
+<p>
+  <strong>Capacidad combustible:</strong>
+  <%= @vehiculo.capacidad_combustible %>
+</p>
+
+<p>
+  <strong>Autonomia km:</strong>
+  <%= @vehiculo.autonomia_km %>
+</p>
+
+<p>
+  <strong>Rodaje:</strong>
+  <%= @vehiculo.rodaje %>
+</p>
+
+<p>
+  <strong>Suspension:</strong>
+  <%= @vehiculo.suspension %>
+</p>
+
+<p>
+  <strong>Otros:</strong>
+  <%= @vehiculo.otros %>
+</p>
+
+<p>
+  <strong>Pais:</strong>
+  <%= @vehiculo.pais %>
+</p>
+
+<p>
+  <strong>Tipo vehiculo:</strong>
+  <%= @vehiculo.tipo_vehiculo %>
+</p>
+
+<%= link_to 'Edit', edit_vehiculo_path(@vehiculo) %> |
+<%= link_to 'Back', vehiculos_path %>
