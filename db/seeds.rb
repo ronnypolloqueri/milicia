@@ -1524,3 +1524,16 @@ num_personal_con_instruccion.times do
 	instruccion.save
 
 end
+# TODO Podriamos mejorar aun mas esto para hacerlo mas relista
+# ============= 	REGISTROS DE PERSONAL AGREGANDO GRADO, FECHA_INSCRIPCION Y FECHA_LICENCIADO =========================
+num_grados = Grado.all.size
+# Los ingresos son en los meses de diciembre y junio
+num_dias = [740, 558]
+Personal.all.each do |personal|
+	index_num_dias = rand(0..1)
+	personal.grado_id = rand(1..num_grados)
+	personal.fecha_inscripcion = hoy.days_ago(num_dias[index_num_dias]+ rand(0..30))
+	personal.fecha_licenciado  = personal.fecha_inscripcion.days_since(rand(730..737))
+	personal.save
+end
+

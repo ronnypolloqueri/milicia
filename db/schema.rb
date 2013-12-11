@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211001331) do
+ActiveRecord::Schema.define(version: 20131211151403) do
 
   create_table "alergias", force: true do |t|
     t.string   "nombre"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20131211001331) do
   add_index "distritos", ["provincia_id"], name: "index_distritos_on_provincia_id"
 
   create_table "grados", force: true do |t|
-    t.string   "denominacion"
+    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -138,6 +138,8 @@ ActiveRecord::Schema.define(version: 20131211001331) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "grado_id"
+    t.date     "fecha_inscripcion"
+    t.date     "fecha_licenciado"
   end
 
   add_index "personal", ["cuartel_id"], name: "index_personal_on_cuartel_id"
@@ -202,6 +204,10 @@ ActiveRecord::Schema.define(version: 20131211001331) do
     t.datetime "updated_at"
   end
 
+  create_table "tipo_vehiculo", force: true do |t|
+    t.string "nombre"
+  end
+
   create_table "unidad", force: true do |t|
     t.string   "nombre"
     t.text     "descripcion"
@@ -213,5 +219,28 @@ ActiveRecord::Schema.define(version: 20131211001331) do
   end
 
   add_index "unidad", ["gran_unidad_id"], name: "index_unidad_on_gran_unidad_id"
+
+  create_table "vehiculos", force: true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.integer  "peso"
+    t.decimal  "longitud"
+    t.decimal  "anchura"
+    t.decimal  "altura"
+    t.string   "motor"
+    t.string   "velocidad_max"
+    t.integer  "capacidad_combustible"
+    t.integer  "autonomia_km"
+    t.string   "rodaje"
+    t.string   "suspension"
+    t.text     "otros"
+    t.integer  "pais_id"
+    t.integer  "tipo_vehiculo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "vehiculos", ["pais_id"], name: "index_vehiculos_on_pais_id"
+  add_index "vehiculos", ["tipo_vehiculo_id"], name: "index_vehiculos_on_tipo_vehiculo_id"
 
 end

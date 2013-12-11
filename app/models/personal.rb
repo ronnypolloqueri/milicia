@@ -3,6 +3,7 @@ class Personal < ActiveRecord::Base
   belongs_to :unidad
   belongs_to :distrito
   belongs_to :cuartel
+  belongs_to :grado
   has_and_belongs_to_many :alergias, join_table: 'personal_alergia'
   has_and_belongs_to_many :infracciones, join_table: 'personal_infraccion'
   has_and_belongs_to_many :cursos, join_table: 'personal_curso'

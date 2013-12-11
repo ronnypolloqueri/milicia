@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  descripcion: MyText
+  peso: 1
+  longitud: 9.99
+  anchura: 9.99
+  altura: 9.99
+  motor: MyString
+  velocidad_max: MyString
+  capacidad_combustible: 1
+  autonomia_km: 1
+  rodaje: MyString
+  suspension: MyString
+  otros: MyText
+  pais_id: 
+  tipo_vehiculo_id: 
+
+two:
+  nombre: MyString
+  descripcion: MyText
+  peso: 1
+  longitud: 9.99
+  anchura: 9.99
+  altura: 9.99
+  motor: MyString
+  velocidad_max: MyString
+  capacidad_combustible: 1
+  autonomia_km: 1
+  rodaje: MyString
+  suspension: MyString
+  otros: MyText
+  pais_id: 
+  tipo_vehiculo_id: 
