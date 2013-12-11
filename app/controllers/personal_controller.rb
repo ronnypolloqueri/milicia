@@ -10,6 +10,29 @@ class PersonalController < ApplicationController
     @personal = Personal.all
   end
 
+  def por_curso
+    @cursos = Curso.select(:id, :fecha_inicio, :nombre, :descripcion).order(fecha_inicio: :desc )
+    @personal = Personal.por_curso(params[:curso_id]) if params[:curso_id]
+    @curso = Curso.find(params[:curso_id]) if params[:curso_id]
+  end
+
+  def por_curso_show
+    personal_por_curso = Personal.por_curso(params[:curso_id])
+    # @secuencia = personal_por_curso.ids
+    @secuencia = []
+    personal_por_curso.each do |personal|
+      @secuencia << personal.id
+    end
+
+    # @personal_ids = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
+    @personal  = Personal.find(params[:id])
+    @alergias = @personal.alergias
+    @infracciones = ActiveRecord::Base.connection.execute("SELECT pi.fecha_infraccion, i.nombre, i.id FROM personal_infraccion pi
+                                                  INNER JOIN infracciones i ON pi.infraccion_id = i.id
+                                                  INNER JOIN personal     p ON pi.personal_id   = p.id
+                                                  WHERE p.id = #{@personal.id}
+                                                  ORDER BY pi.fecha_infraccion DESC")
+  end
   def por_alergia
     @indice_alergias = Alergia.select(:id, :nombre)
     @personal = Personal.por_alergia(params[:alergia]) if params[:alergia]

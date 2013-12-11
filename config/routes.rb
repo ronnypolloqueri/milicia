@@ -14,6 +14,8 @@ Milicia::Application.routes.draw do
   get 'personal/unidades(/:unidad_id)' => 'personal#por_unidad', as: :por_unidad
   get 'personal/unidades/:unidad_id/:id' => 'personal#por_unidad_show', as: :por_unidad_show
 
+  get 'personal/cursos(/:curso_id)' => 'personal#por_curso', as: :por_curso
+  get 'personal/cursos/:curso_id/:id' => 'personal#por_curso_show', as: :por_curso_show
   resources :personal
 
   resources :unidad

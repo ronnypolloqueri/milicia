@@ -1509,3 +1509,18 @@ infractores.times do
 	infraccion.save
 
 end
+
+# TODO El personal registrado a un curso se debe limitar hasta antes de la fecha_inicio del curso
+# ==================  	REGISTROS DE PERSONAL_CURSO =========================
+num_cursos = Curso.all.size
+num_personal_con_instruccion = (num_personal * 0.75).to_i
+
+num_personal_con_instruccion.times do
+
+	instruccion = PersonalCurso.new
+		instruccion.personal_id = rand(1..num_personal)
+		instruccion.curso_id = rand(1..num_cursos)
+		instruccion.puntaje = rand(10..30)
+	instruccion.save
+
+end

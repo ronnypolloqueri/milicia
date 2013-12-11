@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  curso_id: 
+  personal_id: 
+  puntaje: 1
+
+two:
+  curso_id: 
+  personal_id: 
+  puntaje: 1

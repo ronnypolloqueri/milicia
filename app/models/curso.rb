@@ -1,4 +1,6 @@
 class Curso < ActiveRecord::Base
+	self.table_name = 'cursos'
+	has_and_belongs_to_many :personal, join_table: 'personal_curso'
 
 	def self.por_anio(anio)
 		# Para sqlite3

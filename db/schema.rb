@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131210160401) do
+ActiveRecord::Schema.define(version: 20131211001331) do
 
   create_table "alergias", force: true do |t|
     t.string   "nombre"
@@ -154,6 +154,17 @@ ActiveRecord::Schema.define(version: 20131210160401) do
 
   add_index "personal_alergia", ["alergia_id"], name: "index_personal_alergia_on_alergia_id"
   add_index "personal_alergia", ["personal_id"], name: "index_personal_alergia_on_personal_id"
+
+  create_table "personal_curso", force: true do |t|
+    t.integer  "curso_id"
+    t.integer  "personal_id"
+    t.integer  "puntaje"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "personal_curso", ["curso_id"], name: "index_personal_curso_on_curso_id"
+  add_index "personal_curso", ["personal_id"], name: "index_personal_curso_on_personal_id"
 
   create_table "personal_infraccion", force: true do |t|
     t.integer  "personal_id"

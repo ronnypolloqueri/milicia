@@ -1,0 +1,36 @@
+<% unless params[:curso_id] %>
+<h1>Por Cursos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha Inicio</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cursos.each do |curso| %>
+      <tr>
+        <td><%= curso.fecha_inicio %></td>
+        <td><%= link_to curso.nombre, por_curso_path( curso.id ) %></td>
+        <td><%= truncate(curso.descripcion, length: 100) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+	<h3>Personal capacitado en: "<%= @curso.nombre %>"</h3>
+	<% if @personal.size > 0 %>
+		<ul>
+		<% @personal.each do |persona| %>
+			<li> <%= link_to persona.apellidos+", "+persona.nombres, por_curso_show_path(params[:curso_id], persona.id) %> </li>
+		<% end %>
+		</ul>
+	<% else %>
+		<h5>No se encontraron registros</h5>
+	<% end %>
+	<%= link_to 'Volver al indice', por_curso_path %>
+<% end %>
