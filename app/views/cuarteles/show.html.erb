@@ -68,6 +68,17 @@
   </div>
 </div>
 
+<div class="panel panel-success" id="vehiculos">
+  <div class="panel-heading">Vehículos:</div>
+  <div class="panel-body">
+    <ul>
+      <% @vehiculos.each do |vehiculo| %>
+        <li><%= vehiculo['cantidad']%> - <%= link_to vehiculo['nombre'], vehiculo_path(vehiculo['vehiculo_id']) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 
 <%= link_to 'Edit', edit_cuartel_path(@cuartel) %> |
 <%= link_to 'Regresar al menu', '#inicio' %> |

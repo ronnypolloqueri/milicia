@@ -14,6 +14,11 @@ class CuartelesController < ApplicationController
     @secuencia = Cuartel.select(:id, :nombre).order(:nombre).ids
     @cuartel = Cuartel.find(params[:id])
     @personal = @cuartel.personal
+    @vehiculos = ActiveRecord::Base.connection.execute("
+                    SELECT v.nombre, cv.cantidad, cv.vehiculo_id FROM cuarteles c
+                      INNER JOIN cuartel_vehiculo cv ON c.id = cv.cuartel_id
+                      INNER JOIN        vehiculos  v ON v.id = cv.vehiculo_id
+                      WHERE c.id = #{@cuartel.id}")
   end
 
   # GET /cuarteles/new

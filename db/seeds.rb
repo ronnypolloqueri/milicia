@@ -1561,3 +1561,19 @@ Vehiculo.create(nombre:'M-8 Greyhound' ,pais_id:6 ,tipo_vehiculo_id:8 ,peso:7800
 
 # ==================  	REGISTROS DE CUARTEL_VEHICULO =========================
 
+cuarteles_ids = Cuartel.select(:id).ids
+vehiculos_ids = Vehiculo.select(:id).ids
+
+
+cuarteles_ids.each do |cuartel_id|
+	random_vehiculos_ids = vehiculos_ids.sort_by{rand}
+	num_vehiculos_asignados = rand(4..vehiculos_ids.size)
+
+	num_vehiculos_asignados.times do
+		cv = CuartelVehiculo.new
+		cv.cuartel_id = cuartel_id
+		cv.vehiculo_id = random_vehiculos_ids.pop
+		cv.cantidad = rand(10..50)
+		cv.save
+	end
+end
