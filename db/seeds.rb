@@ -1558,3 +1558,6 @@ Vehiculo.create(nombre:'BTR-60' ,pais_id:4 ,tipo_vehiculo_id:5 ,peso:10100 ,long
 Vehiculo.create(nombre:'Fial 6616' ,pais_id:11 ,tipo_vehiculo_id:7 ,peso:8500 ,longitud:5.9,anchura:2.5,altura:1.8 ,motor:'Iveco 8062.24, 4 cilindros 160 CV' ,velocidad_max:'100 km/h' ,capacidad_combustible:nil ,autonomia_km:700 ,rodaje:'4 ruedas, 4 motrices' ,suspension:nil ,imagen_url:'fial_6616.jpg')
 Vehiculo.create(nombre:'Thyssen Henschel UR-416' ,pais_id:7 ,tipo_vehiculo_id:5 ,peso:7600 ,longitud:5.21,anchura:2.25,altura:2.52 ,motor:'Daimler-Benz OM352 turbo diesel 120 CV' ,velocidad_max:nil ,capacidad_combustible:nil ,autonomia_km:700 ,rodaje:nil ,suspension:nil ,imagen_url:'thyssen_henschel_ur-416.jpg')
 Vehiculo.create(nombre:'M-8 Greyhound' ,pais_id:6 ,tipo_vehiculo_id:8 ,peso:7800 ,longitud:5,anchura:2.54,altura:2.64 ,motor:'Hercules JXD 6-cyl (gasolina) 110 CV (82 kW) Hercules JXD 6-cyl' ,velocidad_max:'90 km/h (carretera)' ,capacidad_combustible:nil ,autonomia_km:nil ,rodaje:nil ,suspension:nil ,imagen_url:'m-8_greyhound.jpg')
+
+# ==================  	REGISTROS DE CUARTEL_VEHICULO =========================
+

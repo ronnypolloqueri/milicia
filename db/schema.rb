@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212164713) do
+ActiveRecord::Schema.define(version: 20131212165743) do
 
   create_table "alergias", force: true do |t|
     t.string   "nombre"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20131212164713) do
     t.integer  "vehiculo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cantidad"
   end
 
   add_index "cuartel_vehiculo", ["cuartel_id"], name: "index_cuartel_vehiculo_on_cuartel_id"
