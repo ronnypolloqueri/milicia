@@ -16,7 +16,7 @@
   <tbody>
     <% @vehiculos.each do |vehiculo| %>
       <tr>
-        <td class="col-xs-3 col-md-2"><%= image_tag "armas_ligeras/"+vehiculo.imagen_url, alt: vehiculo.imagen_url, class: "img-responsive img-thumbnail" %></td>
+        <td class="col-xs-3 col-md-2"><%= image_tag "vehiculos/"+vehiculo.imagen_url, alt: vehiculo.imagen_url, class: "img-responsive img-thumbnail" %></td>
         <td><%= link_to vehiculo.nombre, vehiculo %></td>
         <td><%= truncate(vehiculo.descripcion, length: 100 )%></td>
         <td><%= vehiculo.tipo_vehiculo.nombre %></td>

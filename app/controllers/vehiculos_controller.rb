@@ -4,12 +4,13 @@ class VehiculosController < ApplicationController
   # GET /vehiculos
   # GET /vehiculos.json
   def index
-    @vehiculos = Vehiculo.all
+    @vehiculos = Vehiculo.select(:id, :descripcion, :nombre, :imagen_url, :tipo_vehiculo_id).order(:nombre)
   end
 
   # GET /vehiculos/1
   # GET /vehiculos/1.json
   def show
+    @secuencia = Vehiculo.select(:id).order(:nombre).ids
   end
 
   # GET /vehiculos/new

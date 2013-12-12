@@ -1,79 +1,142 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nombre:</strong>
-  <%= @vehiculo.nombre %>
+  <h3>
+  <div class="row">
+    <div class="col-md-2">
+    <%= link_to '<<Anterior', vehiculo_path( anterior(@secuencia, @vehiculo.id)) %>
+    </div>
+    <div class="col-md-8 text-center"><%= @vehiculo.nombre %></div>
+    <div class="col-md-2 text-right"><%= link_to 'Siguiente>>', vehiculo_path( siguiente(@secuencia, @vehiculo.id)) %></div>
+  </div>
+  </h3>
 </p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @vehiculo.descripcion %>
-</p>
+<div class="row">
+  <div class="col-md-7">
+    <div class="panel panel-default">
+      <div class="panel-body">
 
-<p>
-  <strong>Peso:</strong>
-  <%= @vehiculo.peso %>
-</p>
 
-<p>
-  <strong>Longitud:</strong>
-  <%= @vehiculo.longitud %>
-</p>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li><a href="#imagen" data-toggle="tab">Imagen</a></li>
+      <li><a href="#video" data-toggle="tab">Video</a></li>
+    </ul>
 
-<p>
-  <strong>Anchura:</strong>
-  <%= @vehiculo.anchura %>
-</p>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="imagen">
+        <p>
+          <%= image_tag "vehiculos/"+@vehiculo.imagen_url, alt: @vehiculo.imagen_url, class: "img-responsive img-thumbnail"%>
+        </p>
+      </div>
+      <div class="tab-pane" id="video">
+        <p>
+        <iframe class="video-responsive" src="//www.youtube.com/embed/L9apXjni7Mw" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
+    </div>
+    <!-- End Tab panes -->
+          </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Descripción</div>
+      <div class="panel-body">
+        <p>
+          <%= raw @vehiculo.descripcion %>
+        </p>
 
-<p>
-  <strong>Altura:</strong>
-  <%= @vehiculo.altura %>
-</p>
+      </div>
+    </div>
 
-<p>
-  <strong>Motor:</strong>
-  <%= @vehiculo.motor %>
-</p>
 
-<p>
-  <strong>Velocidad max:</strong>
-  <%= @vehiculo.velocidad_max %>
-</p>
+  </div>
+  <div class="col-md-5">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Detalles</div>
+        <div class="panel-body">
+          <p>
+            <strong>Peso:</strong>
+            <%= @vehiculo.peso %> gramos
+          </p>
+          <p>
+            <strong>Longitud:</strong>
+            <%= @vehiculo.longitud %> mm
+          </p>
 
-<p>
-  <strong>Capacidad combustible:</strong>
-  <%= @vehiculo.capacidad_combustible %>
-</p>
+          <p>
+            <strong>Anchura:</strong>
+            <%= @vehiculo.anchura %>
+          </p>
 
-<p>
-  <strong>Autonomia km:</strong>
-  <%= @vehiculo.autonomia_km %>
-</p>
+          <p>
+            <strong>Altura:</strong>
+            <%= @vehiculo.altura %>
+          </p>
 
-<p>
-  <strong>Rodaje:</strong>
-  <%= @vehiculo.rodaje %>
-</p>
+          <p>
+            <strong>Pais:</strong>
+            <%= image_tag "paises/"+@vehiculo.pais.imagen_url%>
+            <%= @vehiculo.pais.nombre %>
+          </p>
 
-<p>
-  <strong>Suspension:</strong>
-  <%= @vehiculo.suspension %>
-</p>
+          <p>
+            <strong>Tipo:</strong>
+            <%= @vehiculo.tipo_vehiculo.nombre %>
+          </p>
 
-<p>
-  <strong>Otros:</strong>
-  <%= @vehiculo.otros %>
-</p>
+          <!--  -->
+          <p>
+            <strong>Motor:</strong>
+            <%= @vehiculo.motor %> metros
+          </p>
 
-<p>
-  <strong>Pais:</strong>
-  <%= @vehiculo.pais %>
-</p>
+          <p>
+            <strong>Velocidad max:</strong>
+            <%= @vehiculo.velocidad_max %> metros
+          </p>
 
-<p>
-  <strong>Tipo vehiculo:</strong>
-  <%= @vehiculo.tipo_vehiculo %>
-</p>
+          <p>
+            <strong>Capacidad (Combustible):</strong>
+            <%= @vehiculo.capacidad_combustible %>
+          </p>
 
+          <p>
+            <strong>Autonomia Kilometros:</strong>
+            <%= @vehiculo.autonomia_km %>
+          </p>
+
+          <p>
+            <strong>Rodaje:</strong>
+            <%= @vehiculo.rodaje %>
+          </p>
+
+          <p>
+            <strong>Suspensión:</strong>
+            <%= @vehiculo.suspension %>
+          </p>
+
+          <p>
+            <strong>Otros:</strong>
+            <%= @vehiculo.otros %>
+          </p>
+        </div><!-- fin panel body -->
+
+    </div><!-- fin panel -->
+  </div><!-- fin col-md-5 -->
+</div><!-- fin row -->
 <%= link_to 'Edit', edit_vehiculo_path(@vehiculo) %> |
 <%= link_to 'Back', vehiculos_path %>
+
+
+<script type="text/javascript">
+  $('#imagen a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+  $('#video a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
