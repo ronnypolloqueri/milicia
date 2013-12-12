@@ -69,6 +69,17 @@
 </div>
 
 <div class="panel panel-success" id="vehiculos">
+  <div class="panel-heading">Armamento:</div>
+  <div class="panel-body">
+    <ul>
+      <% @armamento.each do |armamento| %>
+        <li><%= armamento['cantidad']%> - <%= link_to armamento['nombre'], arma_ligera_path(armamento['armamento_id']) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="panel panel-success" id="vehiculos">
   <div class="panel-heading">Vehículos:</div>
   <div class="panel-body">
     <ul>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212165743) do
+ActiveRecord::Schema.define(version: 20131212175902) do
 
   create_table "alergias", force: true do |t|
     t.string   "nombre"
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 20131212165743) do
 
   add_index "armamento", ["pais_id"], name: "index_armamento_on_pais_id"
   add_index "armamento", ["tipo_armamento_id"], name: "index_armamento_on_tipo_armamento_id"
+
+  create_table "cuartel_armamento", force: true do |t|
+    t.integer  "cuartel_id"
+    t.integer  "armamento_id"
+    t.integer  "cantidad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cuartel_armamento", ["armamento_id"], name: "index_cuartel_armamento_on_armamento_id"
+  add_index "cuartel_armamento", ["cuartel_id"], name: "index_cuartel_armamento_on_cuartel_id"
 
   create_table "cuartel_vehiculo", force: true do |t|
     t.integer  "cuartel_id"

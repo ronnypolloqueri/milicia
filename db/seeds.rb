@@ -1577,3 +1577,22 @@ cuarteles_ids.each do |cuartel_id|
 		cv.save
 	end
 end
+
+# ==================  	REGISTROS DE CUARTEL_ARMAMENTO =========================
+
+cuarteles_ids = Cuartel.select(:id).ids
+armamento_ids = Armamento.select(:id).ids
+
+
+cuarteles_ids.each do |cuartel_id|
+	random_armamento_ids = armamento_ids.sort_by{rand}
+	num_armas_asignadas = rand(10..armamento_ids.size)
+
+	num_armas_asignadas.times do
+		ca = CuartelArmamento.new
+		ca.cuartel_id = cuartel_id
+		ca.armamento_id = random_armamento_ids.pop
+		ca.cantidad = rand(30..200)
+		ca.save
+	end
+end

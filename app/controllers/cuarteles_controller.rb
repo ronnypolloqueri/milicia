@@ -14,11 +14,20 @@ class CuartelesController < ApplicationController
     @secuencia = Cuartel.select(:id, :nombre).order(:nombre).ids
     @cuartel = Cuartel.find(params[:id])
     @personal = @cuartel.personal
+    @armamento = ActiveRecord::Base.connection.execute("
+                    SELECT a.nombre, ca.cantidad, al.id FROM arma_ligera al
+                      INNER JOIN       armamento    a ON a.id = al.armamento_id
+                      INNER JOIN cuartel_armamento ca ON a.id = ca.armamento_id
+                      INNER JOIN cuarteles          c ON c.id = ca.cuartel_id
+                      WHERE c.id = #{@cuartel.id}
+                      ORDER BY a.nombre")
+
     @vehiculos = ActiveRecord::Base.connection.execute("
                     SELECT v.nombre, cv.cantidad, cv.vehiculo_id FROM cuarteles c
                       INNER JOIN cuartel_vehiculo cv ON c.id = cv.cuartel_id
                       INNER JOIN        vehiculos  v ON v.id = cv.vehiculo_id
-                      WHERE c.id = #{@cuartel.id}")
+                      WHERE c.id = #{@cuartel.id}
+                      ORDER BY v.nombre")
   end
 
   # GET /cuarteles/new
