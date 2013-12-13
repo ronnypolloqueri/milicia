@@ -1,6 +1,6 @@
 class UnidadController < ApplicationController
   before_action :set_unidad, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_breadcrumb
   # GET /unidad
   # GET /unidad.json
   def index
@@ -22,6 +22,7 @@ class UnidadController < ApplicationController
       @secuencia << item["id"]
     end
     @unidad = Unidad.find(params[:id])
+    @breadcrumb.push << {nombre: @unidad.nombre, url: @unidad}
     @personal = @unidad.personal
   end
 
@@ -78,6 +79,11 @@ class UnidadController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_unidad
       @unidad = Unidad.find(params[:id])
+    end
+
+    def set_breadcrumb
+      @breadcrumb = []
+      @breadcrumb.push << {nombre: 'Unidades', url: unidad_index_path}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

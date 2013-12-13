@@ -4,8 +4,6 @@
   <thead>
     <tr>
       <th><h2>Nombre</h2></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -13,8 +11,7 @@
     <% @region_militar.each do |region_militar| %>
       <tr>
         <td><%= link_to region_militar.nombre, region_militar %></td>
-        <td><%= link_to 'Editar', edit_region_militar_path(region_militar) %></td>
-        <td><%= link_to 'Eliminar', region_militar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +19,3 @@
 
 <br>
 
-<%= link_to 'Nueva Region militar', new_region_militar_path %>

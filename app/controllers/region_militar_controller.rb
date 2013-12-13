@@ -1,6 +1,6 @@
 class RegionMilitarController < ApplicationController
   before_action :set_region_militar, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_breadcrumb
   # GET /region_militar
   # GET /region_militar.json
   def index
@@ -14,6 +14,7 @@ class RegionMilitarController < ApplicationController
   def show
     # @grandes_unidades = RegionMilitar.find(params[:id])gran_unidad
     @secuencia = RegionMilitar.select(:id).order(:nombre).ids
+    @breadcrumb << {nombre: @region_militar.nombre, url: @region_militar}
     @grandes_unidades = @region_militar.gran_unidad
   end
 
@@ -72,6 +73,10 @@ class RegionMilitarController < ApplicationController
       @region_militar = RegionMilitar.find(params[:id])
     end
 
+    def set_breadcrumb
+      @breadcrumb = []
+      @breadcrumb << {nombre: 'Regiones Militares', url: region_militar_index_path}
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def region_militar_params
       params.require(:region_militar).permit(:nombre, :descripcion, :himno)

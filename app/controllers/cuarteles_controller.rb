@@ -1,6 +1,6 @@
 class CuartelesController < ApplicationController
   before_action :set_cuartel, only: [:edit, :update, :destroy]
-
+  before_action :set_breadcrumb
   # GET /cuarteles
   # GET /cuarteles.json
   def index
@@ -18,6 +18,7 @@ class CuartelesController < ApplicationController
     # Se ordenaran alfabeticamente
     @secuencia = Cuartel.select(:id, :nombre).order(:nombre).ids
     @cuartel = Cuartel.find(params[:id])
+    @breadcrumb.push << {nombre: @cuartel.nombre, url: @cuartel}
     @personal = @cuartel.personal
     @armamento = ActiveRecord::Base.connection.execute("
                     SELECT a.nombre, ca.cantidad, al.id FROM arma_ligera al
@@ -88,6 +89,11 @@ class CuartelesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cuartel
       @cuartel = Cuartel.find(params[:id])
+    end
+
+    def set_breadcrumb
+      @breadcrumb = []
+      @breadcrumb.push << {nombre: 'Cuarteles', url: cuarteles_path}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

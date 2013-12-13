@@ -1,6 +1,6 @@
 class VehiculosController < ApplicationController
   before_action :set_vehiculo, only: [:show, :edit, :update, :destroy]
-  before_action :set_active_navbar_vehiculo
+  before_action :set_active_navbar_vehiculo, :set_breadcrumb
 
   # GET /vehiculos
   # GET /vehiculos.json
@@ -12,6 +12,7 @@ class VehiculosController < ApplicationController
   # GET /vehiculos/1.json
   def show
     @secuencia = Vehiculo.select(:id).order(:nombre).ids
+    @breadcrumb << {nombre: @vehiculo.nombre, url: @vehiculo}
   end
 
   # GET /vehiculos/new
@@ -67,6 +68,11 @@ class VehiculosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_vehiculo
       @vehiculo = Vehiculo.find(params[:id])
+    end
+
+    def set_breadcrumb
+      @breadcrumb = []
+      @breadcrumb << {nombre: 'Vehiculos', url: vehiculos_path}
     end
 
     def set_active_navbar_vehiculo

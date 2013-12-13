@@ -1,6 +1,6 @@
 class CursosController < ApplicationController
   before_action :set_curso, only: [:show, :edit, :update, :destroy]
-  before_action :set_active_navbar_curso
+  before_action :set_active_navbar_curso, :set_breadcrumb
   # GET /cursos
   # GET /cursos.json
   def index
@@ -10,8 +10,11 @@ class CursosController < ApplicationController
   def por_fecha_inicio
     if(params[:mes])
       @cursos = Curso.por_anio_y_mes(params[:anio],params[:mes])
+      @breadcrumb.push << {nombre: params[:anio], url: cursos_por_fecha_inicio_path(params[:anio])}
+      @breadcrumb.push << {nombre: params[:mes], url: cursos_por_fecha_inicio_path(params[:anio],params[:mes])}
     else
       @cursos = Curso.por_anio(params[:anio])
+      @breadcrumb.push << {nombre: params[:anio], url: cursos_por_fecha_inicio_path(params[:anio])}
     end
     @anio_ini = Curso.primer_anio
     @anio_fin = Curso.ultimo_anio
@@ -20,6 +23,7 @@ class CursosController < ApplicationController
   # GET /cursos/1
   # GET /cursos/1.json
   def show
+      @breadcrumb.push << {nombre: @curso.nombre, url: @curso }
   end
 
   # GET /cursos/new
@@ -75,6 +79,11 @@ class CursosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_curso
       @curso = Curso.find(params[:id])
+    end
+
+    def set_breadcrumb
+      @breadcrumb = []
+      @breadcrumb.push << {nombre: 'Cursos', url: cursos_por_fecha_inicio_path(2013)}
     end
 
     def set_active_navbar_curso

@@ -1,6 +1,6 @@
 class ArmaLigeraController < ApplicationController
   before_action :set_arma_ligera, only: [:show, :edit, :update, :destroy]
-  before_action :set_active_navbar_armamento
+  before_action :set_active_navbar_armamento, :set_breadcrumb
   # GET /arma_ligera
   # GET /arma_ligera.json
   def index
@@ -16,6 +16,7 @@ class ArmaLigeraController < ApplicationController
     @armas_ordenadas.each do |arma|
       @secuencia << arma.id
     end
+    @breadcrumb << {nombre: @arma_ligera.armamento.nombre, url: arma_ligera_path(@arma_ligera)}
   end
 
   # GET /arma_ligera/new
@@ -71,6 +72,11 @@ class ArmaLigeraController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_arma_ligera
       @arma_ligera = ArmaLigera.find(params[:id])
+    end
+
+    def set_breadcrumb
+      @breadcrumb = []
+      @breadcrumb << {nombre: 'Armamento', url: arma_ligera_index_path}
     end
 
     def set_active_navbar_armamento

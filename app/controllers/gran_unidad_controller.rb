@@ -1,6 +1,6 @@
 class GranUnidadController < ApplicationController
   before_action :set_gran_unidad, only: [:edit, :update, :destroy]
-
+  before_action :set_breadcrumb
   # GET /gran_unidad
   # GET /gran_unidad.json
   def index
@@ -24,6 +24,7 @@ class GranUnidadController < ApplicationController
       @secuencia << item["id"]
     end
     @gran_unidad = GranUnidad.find(params[:id])
+    @breadcrumb.push << {nombre: @gran_unidad.nombre, url: @gran_unidad}
     @unidades = @gran_unidad.unidad
   end
 
@@ -82,6 +83,10 @@ class GranUnidadController < ApplicationController
       @gran_unidad = GranUnidad.find(params[:id])
     end
 
+    def set_breadcrumb
+      @breadcrumb = []
+      @breadcrumb.push << {nombre: 'Grandes Unidades', url: gran_unidad_index_path}
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def gran_unidad_params
       params.require(:gran_unidad).permit(:nombre, :descripcion, :himno, :lema, :region_militar_id)
