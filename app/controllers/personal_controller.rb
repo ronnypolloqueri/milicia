@@ -1,5 +1,6 @@
 class PersonalController < ApplicationController
   before_action :set_personal, only: [:show, :edit, :update, :destroy]
+  before_action :set_active_navbar_personal, :set_breadcrumb
   #TODO Revisar esta idea
   # after_action :contexto_personal, only: [:por_grupo_sanguineo]
 
@@ -11,13 +12,23 @@ class PersonalController < ApplicationController
   end
 
   def por_curso
+    @breadcrumb.push << {nombre: 'Por Curso', url: por_curso_path}
+
     @cursos = Curso.select(:id, :fecha_inicio, :nombre, :descripcion).order(fecha_inicio: :desc )
-    @personal = Personal.por_curso(params[:curso_id]) if params[:curso_id]
-    @curso = Curso.find(params[:curso_id]) if params[:curso_id]
+    if params[:curso_id]
+      @personal = Personal.por_curso(params[:curso_id])
+      @curso = Curso.find(params[:curso_id])
+
+      @breadcrumb << {nombre: "#{@curso.nombre}", url: por_curso_path(@curso.id)}
+    end
   end
 
   def por_curso_show
-    personal_por_curso = Personal.por_curso(params[:curso_id])
+    @curso = Curso.find(params[:curso_id])
+    @breadcrumb.push << {nombre: 'Por Curso', url: por_curso_path }
+    @breadcrumb.push << {nombre: "#{@curso.nombre}", url: por_curso_path(@curso.id) }
+
+    personal_por_curso = Personal.por_curso(@curso.id)
     # @secuencia = personal_por_curso.ids
     @secuencia = []
     personal_por_curso.each do |personal|
@@ -26,6 +37,7 @@ class PersonalController < ApplicationController
 
     # @personal_ids = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
     @personal  = Personal.find(params[:id])
+    @breadcrumb << {nombre: @personal.get_apellidos_nombres, url: por_curso_path(@curso.id, @personal.id)}
     @alergias = @personal.alergias
     @infracciones = ActiveRecord::Base.connection.execute("SELECT pi.fecha_infraccion, i.nombre, i.id FROM personal_infraccion pi
                                                   INNER JOIN infracciones i ON pi.infraccion_id = i.id
@@ -34,12 +46,21 @@ class PersonalController < ApplicationController
                                                   ORDER BY pi.fecha_infraccion DESC")
   end
   def por_alergia
+    @breadcrumb.push << {nombre: 'Por Alergia', url: por_alergia_path }
+
     @indice_alergias = Alergia.select(:id, :nombre)
-    @personal = Personal.por_alergia(params[:alergia]) if params[:alergia]
-    @alergia = Alergia.find(params[:alergia]) if params[:alergia]
+    if params[:alergia]
+      @personal = Personal.por_alergia(params[:alergia])
+      @alergia = Alergia.find(params[:alergia])
+      @breadcrumb.push << {nombre: @alergia.nombre, url: por_alergia_path(@alergia.id) }
+    end
   end
 
   def por_alergia_show
+    @breadcrumb.push << {nombre: 'Por Alergia', url: por_alergia_path }
+    @alergia = Alergia.find(params[:alergia])
+    @breadcrumb.push << {nombre: @alergia.nombre, url: por_alergia_path(@alergia.id) }
+
     personal_por_alergia = Personal.por_alergia(params[:alergia])
     # @secuencia = personal_por_alergia.ids
     @secuencia = []
@@ -49,6 +70,7 @@ class PersonalController < ApplicationController
 
     # @personal_ids = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
     @personal  = Personal.find(params[:id])
+    @breadcrumb.push << {nombre: @personal.get_apellidos_nombres, url: por_alergia_path(@alergia.id, @personal.id) }
     @alergias = @personal.alergias
     @infracciones = ActiveRecord::Base.connection.execute("SELECT pi.fecha_infraccion, i.nombre, i.id FROM personal_infraccion pi
                                                   INNER JOIN infracciones i ON pi.infraccion_id = i.id
@@ -131,23 +153,23 @@ class PersonalController < ApplicationController
   end
 
 
-  def por_alergia_show
-    personal_por_alergia = Personal.por_alergia(params[:alergia])
-    # @secuencia = personal_por_alergia.ids
-    @secuencia = []
-    personal_por_alergia.each do |personal|
-      @secuencia << personal.id
-    end
+  # def por_alergia_show
+  #   personal_por_alergia = Personal.por_alergia(params[:alergia])
+  #   # @secuencia = personal_por_alergia.ids
+  #   @secuencia = []
+  #   personal_por_alergia.each do |personal|
+  #     @secuencia << personal.id
+  #   end
 
-    # @personal_ids = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
-    @personal  = Personal.find(params[:id])
-    @alergias = @personal.alergias
-    @infracciones = ActiveRecord::Base.connection.execute("SELECT pi.fecha_infraccion, i.nombre, i.id FROM personal_infraccion pi
-                                                  INNER JOIN infracciones i ON pi.infraccion_id = i.id
-                                                  INNER JOIN personal     p ON pi.personal_id   = p.id
-                                                  WHERE p.id = #{@personal.id}
-                                                  ORDER BY pi.fecha_infraccion DESC")
-  end
+  #   # @personal_ids = Personal.select(:id).where("grupo_sanguineo = ?", params[:grupo_sanguineo]).order('apellidos')
+  #   @personal  = Personal.find(params[:id])
+  #   @alergias = @personal.alergias
+  #   @infracciones = ActiveRecord::Base.connection.execute("SELECT pi.fecha_infraccion, i.nombre, i.id FROM personal_infraccion pi
+  #                                                 INNER JOIN infracciones i ON pi.infraccion_id = i.id
+  #                                                 INNER JOIN personal     p ON pi.personal_id   = p.id
+  #                                                 WHERE p.id = #{@personal.id}
+  #                                                 ORDER BY pi.fecha_infraccion DESC")
+  # end
 
   def por_apellidos
     # validar
@@ -230,6 +252,15 @@ class PersonalController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_personal
       @personal = Personal.find(params[:id])
+    end
+
+    def set_active_navbar_personal
+      @personal_active = 'active'
+    end
+
+    def set_breadcrumb
+      @breadcrumb = []
+      @breadcrumb << {nombre: 'Personal',url: '#'}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

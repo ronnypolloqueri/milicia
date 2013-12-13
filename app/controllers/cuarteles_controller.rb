@@ -5,6 +5,11 @@ class CuartelesController < ApplicationController
   # GET /cuarteles.json
   def index
     @cuarteles = Cuartel.select(:id, :nombre).order(:nombre)
+
+    # Control de los botones activos
+    @gu_active = ''
+    @rm_active = ''
+    @cuarteles_active = 'active'
   end
 
   # GET /cuarteles/1

@@ -1,6 +1,6 @@
 class CursosController < ApplicationController
   before_action :set_curso, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_active_navbar_curso
   # GET /cursos
   # GET /cursos.json
   def index
@@ -77,6 +77,9 @@ class CursosController < ApplicationController
       @curso = Curso.find(params[:id])
     end
 
+    def set_active_navbar_curso
+      @cursos_active = 'active'
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def curso_params
       params.require(:curso).permit(:nombre, :descripcion, :fecha_inicio, :fecha_fin, :lugar)

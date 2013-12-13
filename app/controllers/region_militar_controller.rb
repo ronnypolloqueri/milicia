@@ -5,6 +5,8 @@ class RegionMilitarController < ApplicationController
   # GET /region_militar.json
   def index
     @region_militar = RegionMilitar.select(:id, :nombre).order(:nombre)
+    # Control de los botones activos
+    @rm_active = 'active'
   end
 
   # GET /region_militar/1

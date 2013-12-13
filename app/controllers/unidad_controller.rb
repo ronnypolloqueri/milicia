@@ -8,6 +8,7 @@ class UnidadController < ApplicationController
     @unidades = ActiveRecord::Base.connection.execute("SELECT u.id, u.nombre, gu.nombre FROM unidad u
                                                   INNER JOIN gran_unidad gu ON u.gran_unidad_id = gu.id
                                                   ORDER BY gu.nombre")
+    @unidades_active = 'active'
   end
 
   # GET /unidad/1

@@ -1,5 +1,6 @@
 class VehiculosController < ApplicationController
   before_action :set_vehiculo, only: [:show, :edit, :update, :destroy]
+  before_action :set_active_navbar_vehiculo
 
   # GET /vehiculos
   # GET /vehiculos.json
@@ -68,6 +69,9 @@ class VehiculosController < ApplicationController
       @vehiculo = Vehiculo.find(params[:id])
     end
 
+    def set_active_navbar_vehiculo
+      @vehiculos_active = 'active'
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehiculo_params
       params.require(:vehiculo).permit(:nombre, :descripcion, :peso, :longitud, :anchura, :altura, :motor, :velocidad_max, :capacidad_combustible, :autonomia_km, :rodaje, :suspension, :otros, :pais_id, :tipo_vehiculo_id)

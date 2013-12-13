@@ -1,4 +1,5 @@
 class InfraccionesController < ApplicationController
+  before_action :set_active_navbar_infraccion
   def index
   	@infracciones = Infraccion.all
   end
@@ -11,4 +12,9 @@ class InfraccionesController < ApplicationController
   def show
   	@infraccion = Infraccion.find(params[:id])
   end
+
+  private
+    def set_active_navbar_infraccion
+      @infracciones_active = 'active'
+    end
 end

@@ -1,6 +1,6 @@
 class ArmaLigeraController < ApplicationController
   before_action :set_arma_ligera, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_active_navbar_armamento
   # GET /arma_ligera
   # GET /arma_ligera.json
   def index
@@ -73,6 +73,9 @@ class ArmaLigeraController < ApplicationController
       @arma_ligera = ArmaLigera.find(params[:id])
     end
 
+    def set_active_navbar_armamento
+      @armamento_active = 'active'
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def arma_ligera_params
       params.require(:arma_ligera).permit(:armamento_id, :alcance_efectivo, :alcance_max, :cadencia, :sistema_disparo, :cargador)

@@ -13,6 +13,19 @@
   <br/>
   <br/>
   <div class="container">
+
+    <ol class="breadcrumb">
+      <% unless @breadcrumb.nil? %>
+        <% @breadcrumb.each do |breadcrumb| %>
+        <!-- link_to breadcrumb[:nombre].to_s,  breadcrumb[:url] -->
+          <li>
+            <a href="<%= breadcrumb[:url] %>">
+              <%=breadcrumb[:nombre]%>
+            </a>
+          </li>
+        <% end %>
+      <% end %>
+    </ol>
     <%= yield %>
   </div>
     <%= render "partials/footer" %>

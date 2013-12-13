@@ -14,7 +14,7 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="dropdown">
+                <li class="dropdown <%= @personal_active %>">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><%= link_to 'Por Apellidos', por_apellidos_path('A')%></li>
@@ -26,12 +26,12 @@
                     <li><%= link_to 'Por Curso', por_curso_path %></li>
                   </ul>
                 </li>
-                <li class="active"><%= link_to 'Regiones Militares', region_militar_index_path  %></li>
-                <li><%= link_to 'Grandes Unidades', gran_unidad_index_path  %></li>
-                <li><%= link_to 'Unidades', unidad_index_path  %></li>
-                <li><%= link_to 'Cuarteles', cuarteles_path %></li>
+                <li class="<%= @rm_active %>"><%= link_to 'Regiones Militares', region_militar_index_path %></li>
+                <li class="<%= @gu_active %>"><%= link_to 'Grandes Unidades', gran_unidad_index_path %></li>
+                <li class="<%= @unidades_active %>"><%= link_to 'Unidades', unidad_index_path  %></li>
+                <li class="<%= @cuarteles_active %>"><%= link_to 'Cuarteles', cuarteles_path %></li>
                 <!-- Infracciones -->
-                <li class="dropdown">
+                <li class="dropdown <%= @infracciones_active %>">
                   <a href="<%= arma_ligera_index_path %>" class="dropdown-toggle" data-toggle="dropdown">Infracciones <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><%= link_to 'Por Tipo', infracciones_por_tipo_path %></li>
@@ -39,7 +39,7 @@
                 </li>
                 <!-- Fin Infracciones -->
                 <!-- Curso -->
-                <li class="dropdown">
+                <li class="dropdown <%= @cursos_active %>">
                   <a href="<%= cursos_path %>" class="dropdown-toggle" data-toggle="dropdown">Curso <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><%= link_to 'Por fecha de inicio', cursos_por_fecha_inicio_path("#{Curso.primer_anio}") %></li>
@@ -47,14 +47,14 @@
                 </li>
                 <!-- Fin Curso -->
                 <!-- Armamento -->
-                <li class="dropdown">
+                <li class="dropdown <%= @armamento_active %>">
                   <a href="<%= arma_ligera_index_path %>" class="dropdown-toggle" data-toggle="dropdown">Armamento <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><%= link_to 'Armas Ligeras', arma_ligera_index_path %></li>
                   </ul>
                 </li>
                 <!-- Fin Armamento -->
-                <li><%= link_to 'Vehiculos', vehiculos_path %></li>
+                <li class="<%= @vehiculos_active %>"><%= link_to 'Vehiculos', vehiculos_path %></li>
               </ul>
             </div>
           </div>
@@ -62,4 +62,3 @@
 
       </div>
     </div>
-
