@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212175902) do
+ActiveRecord::Schema.define(version: 20131213161400) do
 
   create_table "alergias", force: true do |t|
     t.string   "nombre"
@@ -218,6 +218,7 @@ ActiveRecord::Schema.define(version: 20131212175902) do
     t.text     "himno"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "lema"
   end
 
   create_table "tipo_armamento", force: true do |t|
